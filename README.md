@@ -1,6 +1,4 @@
-<hr>
-<p align="center"><h1 style="border:none"> 🚧🚧 WIP 🚧🚧 </h1></p>
-<hr>
+<h1 align="center"> 🚧🚧 WIP 🚧🚧 </h1>
 
 # Obsidian Terminal Theme
 
