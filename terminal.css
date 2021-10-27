@@ -62,6 +62,9 @@ button {
 .checkbox-container:after {
   background-color: var(--the-color);
 }
+.dropdown {
+  border: solid 1px var(--the-color);
+}
 
 /* Status bar */
 .status-bar {
