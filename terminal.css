@@ -8,6 +8,7 @@
   --prompt: "$";
   --not-existent-note: "+";
   --pin-command: "*";
+  --selected: ">";
 }
 
 .theme-dark {
@@ -53,13 +54,13 @@
 
 /* Simplify buttons */
 button {
-  border: solid 1px var(--text-normal);
+  border: solid 1px var(--the-color);
 }
 .checkbox-container {
-  border: solid 1px var(--text-normal);
+  border: solid 1px var(--the-color);
 }
 .checkbox-container:after {
-  background-color: var(--text-normal);
+  background-color: var(--the-color);
 }
 
 /* Status bar */
@@ -90,13 +91,13 @@ button {
   position: absolute;
   left: -0.5em;
   font-size: var(--editor-font-size);
-  color: var(--text-normal);
+  color: var(--the-color);
   font-family: fira code;
 }
 
 .CodeMirror-cursor,
 .cm-s-obsidian .cm-cursor {
-    border-left: 10px solid var(--text-normal);
+    border-left: 10px solid var(--the-color);
 }
 
 .cm-s-obsidian .HyperMD-list-line {
@@ -112,7 +113,7 @@ button {
 }
 
 .cm-s-obsidian span.cm-inline-code {
-  color: var(--text-normal);
+  color: var(--the-color);
   font-style: italic;
 }
 
@@ -124,14 +125,14 @@ button {
 
 .cm-formatting.cm-formatting-code-block,
 .cm-hmd-codeblock {
-  color: var(--text-normal);
+  color: var(--the-color);
   font-size: var(--editor-font-size);
 }
 
 .cm-s-obsidian {
   border-style: solid;
   border-width: 1px 0px;
-  border-color: var(--text-normal);
+  border-color: var(--the-color);
 }
 
 /* View header */
@@ -215,14 +216,20 @@ input.prompt-input {
   border-color: transparent;
   border-width: 1px 0;
 }
-.is-selected {
+/* .is-selected {
   border-style: solid;
-  border-color: var(--text-normal);
+  border-color: var(--the-color);
   border-width: 1px 0;
+} */
+.is-selected:before {
+  content: var(--selected);
+  position: absolute;
+  left: 1px;
+  bottom: 1px;
 }
-.suggestion-content + .suggestion-flair:before {
+.suggestion-item:not(.is-selected) > .suggestion-content + .suggestion-flair:before {
   content: var(--pin-command);
-  color: var(--text-normal);
+  color: var(--the-color);
   position: relative;
   right: 8px;
   bottom: 6px;
@@ -232,9 +239,9 @@ input.prompt-input {
 .suggestion-flair {
   color: transparent;
 }
-.suggestion-flair[aria-label*="Not"]:before {
+.suggestion-item:not(.is-selected) > .suggestion-flair[aria-label*="Not"]:before {
   content: var(--not-existent-note);
-  color: var(--text-normal);
+  color: var(--the-color);
   position: relative;
   right: 8px;
   bottom: 6px;
