@@ -1,5 +1,5 @@
 <hr>
-<div style="text-align:center"><h1> 🚧🚧 WIP 🚧🚧 </h1></div>
+<p align="center"><h1 style="border:none"> 🚧🚧 WIP 🚧🚧 </h1></p>
 <hr>
 
 # Obsidian Terminal Theme
