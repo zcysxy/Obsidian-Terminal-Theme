@@ -1,0 +1,236 @@
+:root {
+  --default-font: 'Fira Code', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+  --mermaid-font: var(--default-font);
+  --reveal-font: var(--default-font);
+  --font-monospace: 'Fira Code', 'Source Code Pro', monospace;
+
+  /* My Variables */
+  --status-bar-height: 21px;
+  --prompt: "$";
+  --not-existant-note: "+";
+  --pin-command: "*";
+}
+
+.theme-dark {
+  --background-primary: #000000;
+  --background-primary-alt: #000000;
+  --background-secondary: #000000;
+  --background-secondary-alt: #000000;
+  --background-modifier-border: #000000;
+  --background-modifier-form-field: rgba(0, 0, 0, 0.3);
+  --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-success: #197300;
+  --background-modifier-error: #3d0000;
+  --background-modifier-error-rgb: 61, 0, 0;
+  --background-modifier-error-hover: #470000;
+  --background-modifier-cover: rgba(0, 0, 0, 0.8);
+  --text-accent: #23ff18;
+  --text-accent-hover: #000000;
+  --text-normal: #23ff18;
+  --text-muted: #23ff18;
+  --text-muted-rgb: 153, 153, 153;
+  --text-faint: #23ff18;
+  --text-error: #ff3333;
+  --text-error-hover: #990000;
+  --text-highlight-bg: rgba(255, 255, 0, 0.4);
+  --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
+  --text-selection: rgba(23, 48, 77, 0.99);
+  --text-on-accent: #23ff18;
+  --interactive-normal: #2a2a2a;
+  --interactive-hover: #303030;
+  --interactive-accent: #000000;
+  --interactive-accent-rgb: 72, 54, 153;
+  --interactive-accent-hover: #000000;
+  --interactive-success: #197300;
+  --scrollbar-active-thumb-bg: rgb(255, 255, 255);
+  --scrollbar-bg: rgba(255, 255, 255, 0.05);
+  --scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
+  --highlight-mix-blend-mode: lighten;
+}
+
+button {
+  border: solid 1px var(--text-normal);
+}
+
+.checkbox-container {
+  border: solid 1px var(--text-normal);
+}
+.checkbox-container:after {
+  background-color: var(--text-normal);
+}
+
+.status-bar {
+  justify-content: flex-start;
+  padding-left: 0;
+  margin-left: -5px;
+}
+
+.cm-header {
+  font-size: var(--editor-font-size);
+}
+
+/* .cm-s-obsidian span.cm-math {
+  font-style: normal;
+} */
+
+.markdown-source-view.mod-cm5 {
+  padding: 0px;
+}
+.CodeMirror-lines {
+  padding-left: 20px;
+}
+
+.CodeMirror-activeline .CodeMirror-line:before {
+  content: var(--prompt);
+  position: absolute;
+  left: -0.5em;
+  font-size: var(--editor-font-size);
+  color: var(--text-normal);
+  font-family: fira code;
+}
+
+.CodeMirror-cursor,
+.cm-s-obsidian .cm-cursor {
+    border-left: 10px solid var(--text-normal);
+}
+
+.cm-s-obsidian .HyperMD-list-line {
+  text-indent: 0px !important;
+  padding-left: 5px !important;
+  padding-top: 0px
+}
+
+.cm-s-obsidian .HyperMD-quote {
+  text-indent: 0px !important;
+  padding-left: 5px !important;
+  padding-top: 0px
+}
+
+.cm-s-obsidian span.cm-inline-code {
+  color: var(--text-normal);
+  font-style: italic;
+}
+
+.cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight {
+  background-color: unset;
+  font-weight: bold;
+  font-size: var(--editor-font-size);
+}
+
+.cm-formatting.cm-formatting-code-block,
+.cm-hmd-codeblock {
+  color: var(--text-normal);
+  font-size: var(--editor-font-size);
+}
+
+.cm-s-obsidian {
+  border-style: solid;
+  border-width: 1px 0px;
+  border-color: var(--text-normal);
+}
+
+.view-header-icon,
+.view-header-icon:hover {
+  color: transparent;
+  font-size: 0;
+  margin-right: -1rem !important;
+  padding-top: 0.25rem !important;
+}
+.view-header-icon:before {
+  content: "PWD:";
+  color: #23ff18;
+  font-weight: bold;
+  font-size: var(--editor-font-size);
+  position: relative;
+  bottom: 2px;
+  margin-right: -10px;
+}
+
+.view-action,
+.view-action:hover {
+  color: transparent;
+  width: 1rem;
+}
+.view-action:before {
+  content: "/p";
+  color: #23ff18;
+  font-weight: bold;
+  font-size: var(--editor-font-size);
+}
+.view-action.mod-close-leaf:before {
+  content: "/q";
+  color: #23ff18;
+  font-weight: bold;
+  font-size: var(--editor-font-size);
+}
+a[aria-label="More options"]:before {
+  content: "/?";
+  color: #23ff18;
+  font-weight: bold;
+  font-size: var(--editor-font-size);
+}
+
+/* PROMPT */
+.prompt {
+  display: unset;
+  /* position: fixed; */
+  bottom: var(--status-bar-height);
+  top: 50%;
+  width: 100%;
+  max-width: unset;
+  max-height: 50%;
+  border-style: solid;
+  border-width: 1px 0 1px 0;
+  border-radius: unset;
+}
+.prompt-results {
+  max-height: 90%;
+  padding-top: 0;
+}
+.modal-bg {
+  background-color: unset;
+}
+input {
+  font-family: fira code !important;
+}
+input.prompt-input {
+  padding: 0 0 0 14px;
+  border-color: transparent;
+}
+.prompt:before {
+  content: var(--prompt);
+  position: absolute;
+  top: 18px;
+  left: 12px;
+}
+.suggestion-item {
+  padding: 0 0 0 15px;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 1px 0;
+}
+.is-selected {
+  border-style: solid;
+  border-color: var(--text-normal);
+  border-width: 1px 0;
+}
+.suggestion-content + .suggestion-flair:before {
+  content: var(--pin-command);
+  color: var(--text-normal);
+  position: relative;
+  right: 8px;
+  bottom: 6px;
+}
+
+/* Quick Switcher */
+.suggestion-flair {
+  color: transparent;
+}
+.suggestion-flair[aria-label*="Not"]:before {
+  content: var(--not-existant-note);
+  color: var(--text-normal);
+  position: relative;
+  right: 8px;
+  bottom: 6px;
+}
