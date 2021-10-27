@@ -5,3 +5,9 @@
 > An Obsidian theme emulating a terminal.
 
 ![](screenshots/terminal.png)
+
+![](screenshots/command-palette.png)
+<p align="center">Command Palette</p>
+
+![](screenshots/quick-switcher.png)
+<p align="center">Quick Switcher</p>
