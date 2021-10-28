@@ -110,11 +110,11 @@ body {
   height:12px;
   background:transparent;
 }
-.workspace-split.mod-left-split > .workspace-tabs {
+/* .workspace-split.mod-left-split > .workspace-tabs {
   padding-top:18px;
-}
+} */
 /* Hide scrollbars */
-.hider-scroll ::-webkit-scrollbar {
+::-webkit-scrollbar {
   display:none;
 }
 /* Hide search suggestions */
@@ -141,9 +141,9 @@ body {
   line-height: var(--editor-line-height);
   font-size: var(--editor-font-size);
   font-family: var(--the-font);
-  /* top-bottom borders */
+  /* top border */
   border-style: solid;
-  border-width: 1px 0px;
+  border-width: 1px 0px 0px 0px;
   border-color: var(--the-color);
 }
 
@@ -434,37 +434,45 @@ input.prompt-input {
 .mod-right-split {
   margin-left: -1px;
   border-left: 0.9px solid var(--the-color);
-  border-bottom: 1px solid var(--the-color);
+  /* border-bottom: 1px solid var(--the-color); */
 }
 .mod-left-split {
   border-right: 1px solid var(--the-color);
-  border-bottom: 1px solid var(--the-color);
+  /* border-bottom: 1px solid var(--the-color); */
 }
 /* Hider specific */
-.hider-frameless .workspace-split.mod-left-split > div.workspace-tabs {
+/* .hider-frameless .workspace-split.mod-left-split > div.workspace-tabs {
   padding: 0;
-}
+} */
 .workspace-leaf-resize-handle:not(:hover) {
   background-color: transparent;
 }
 .workspace-tabs + .workspace-tabs {
-  /* margin-top: -1px; */
+  margin-top: -1px;
   border-top: 1px solid var(--the-color);
+}
+.workspace-tabs {
+  padding-right: 0;
 }
 /* Active tab */
 .workspace-tab-header-container {
-  height: 36px;
+  padding-top: 2px;
+  height: 36.7px; /* should be 36px, but ...*/
+  border-bottom: 1px solid var(--the-color);
+}
+.workspace-tab-container-before {
+  /* display: none; */
+  width: 5px;
 }
 .workspace-tab-header.is-active:after {
   content: var(--active-tab);
   color: var(--the-color);
   position: relative;
-  top: -10px;
+  top: -12px;
 }
 .nav-header {
   padding-top: 4px;
 }
-/********************************************/
 
 /* Collapse Icons */
 .collapse-icon svg {
@@ -532,3 +540,28 @@ div[aria-label*="Not created"]:before {
 div[aria-label*="Not created"] svg {
   width: 0;
 }
+/********************************************/
+
+/* Workspace (Center Panes) */
+.workspace-split.mod-vertical > .workspace-leaf,
+.workspace-split.mod-vertical > .workspace-split {
+  padding-right: 0;
+}
+.workspace-split.mod-vertical > .workspace-leaf + .workspace-leaf,
+.workspace-leaf + .workspace-split.mod-horizontal,
+.workspace-split.mod-horizontal + .workspace-leaf,
+.workspace-split.mod-horizontal + .workspace-split.mod-horizontal {
+  margin-left: -1px;
+  border-left: 1px solid var(--the-color);
+}
+.workspace-leaf + .workspace-split.mod-vertical,
+.workspace-split.mod-horizontal > .workspace-leaf + .workspace-leaf {
+  margin-top: -1px;
+  border-top: 1px solid var(--the-color);
+}
+.workspace-split.mod-vertical + .workspace-split.mod-vertical,
+.workspace-split.mod-vertical + .workspace-leaf {
+  margin-top: -1px;
+  border-top: 0.98px solid var(--the-color);
+}
+
