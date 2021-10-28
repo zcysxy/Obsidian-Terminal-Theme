@@ -345,7 +345,10 @@ input.prompt-input {
 }
 .modal.mod-settings .vertical-tab-header,
 .modal.mod-settings .vertical-tab-content-container {
-  height: 100%;
+  /* height: 100%; */
+  height: 100vh;
+  overflow: auto;
+  padding: 0;
 }
 .modal.mod-settings .vertical-tab-header,
 .community-plugin-search {
@@ -355,3 +358,8 @@ input.prompt-input {
   border: 1px solid var(--the-color)
 }
 
+/* Side Panels */
+.mod-right-split {
+  margin-left: -1px;
+  border-left: 1px solid var(--the-color);
+}
