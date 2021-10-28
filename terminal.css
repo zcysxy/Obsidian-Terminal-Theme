@@ -74,7 +74,8 @@ button {
   margin-left: -5px;
 }
 
-/* Editor */
+/* EDITOR */
+/******************************/
 .markdown-source-view.mod-cm5 {
   padding: 0px;
 }
@@ -155,6 +156,10 @@ button {
 .cm-s-obsidian span.cm-inline-code.cm-hmd-indented-code {
   font-style: normal;
 }
+pre.CodeMirror-line {
+  text-indent: unset !important; /* important added for hard-coded style */
+  padding-left: 5px !important;
+}
 
 .cm-formatting.cm-formatting-code-block,
 .cm-hmd-codeblock {
@@ -195,6 +200,7 @@ button {
 .cm-s-obsidian span.cm-hmd-escape-backslash {
   color: var(--the-color);
 }
+/******************************/
 
 /* View header */
 .view-header-icon,
