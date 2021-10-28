@@ -25,7 +25,7 @@
   --background-primary-alt: #000000;
   --background-secondary: #000000;
   --background-secondary-alt: #000000;
-  --background-modifier-border: #000000;
+  --background-modifier-border: var(--the-color);
   --background-modifier-form-field: rgba(0, 0, 0, 0.3);
   --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22);
   --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
@@ -48,7 +48,7 @@
   --text-on-accent: var(--the-color);
   --interactive-normal: #2a2a2a;
   --interactive-hover: #303030;
-  --interactive-accent: #000000;
+  --interactive-accent: var(--the-color);
   --interactive-accent-rgb: var(--the-color-rgb);
   --interactive-accent-hover: #000000;
   --interactive-success: #197300;
