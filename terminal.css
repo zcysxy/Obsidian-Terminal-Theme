@@ -362,6 +362,15 @@ input.prompt-input {
 .community-theme {
   border: 1px solid var(--the-color)
 }
+/* Active item */
+.vertical-tab-nav-item.is-active:before {
+  content: var(--selected);
+  margin-right: 8px;
+  width: 10px;
+}
+.vertical-tab-nav-item.is-active {
+  padding-left: 6px;
+}
 
 /* SIDE PANELS */
 /********************************************/
@@ -374,6 +383,10 @@ input.prompt-input {
   border-right: 1px solid var(--the-color);
   border-bottom: 1px solid var(--the-color);
 }
+/* Hider specific */
+.hider-frameless .workspace-split.mod-left-split > div.workspace-tabs {
+  padding: 0;
+}
 .workspace-leaf-resize-handle:not(:hover) {
   background-color: transparent;
 }
@@ -384,7 +397,6 @@ input.prompt-input {
 /* Active tab */
 .workspace-tab-header-container {
   height: 36px;
-  margin-bottom: 10px;
 }
 .workspace-tab-header.is-active:after {
   content: var(--active-tab);
