@@ -545,6 +545,9 @@ input.prompt-input {
 .search-result-file-match:not(:last-child) {
   margin-bottom: 0;
 }
+.search-result-file-match:after {
+  height: 0;
+}
 
 /* Not created files */
 div[aria-label*="Not created"]:before {
@@ -723,4 +726,9 @@ sup {
   margin-top: calc(var(--editor-line-height) * var(--the-font-size));
   height: calc(var(--editor-line-height) * var(--the-font-size));
 }
-/******************************/
+/***************************** */
+
+/* Graph View */
+canvas {
+  border-top: 1px solid var(--the-color) !important;
+}

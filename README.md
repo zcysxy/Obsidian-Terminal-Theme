@@ -1,4 +1,4 @@
-<h1 align="center"> 🚧🚧 WIP 🚧🚧 </h1>
+<!--<h1 align="center"> 🚧🚧 WIP 🚧🚧 </h1>-->
 
 # Obsidian Terminal Theme
 
@@ -11,3 +11,6 @@
 
 ![](screenshots/quick-switcher.png)
 <p align="center">Quick Switcher</p>
+
+![](screenshots/panes.png)
+<p align="center">Panes</p>
