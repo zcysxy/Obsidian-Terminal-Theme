@@ -185,6 +185,17 @@ button {
   font-size: var(--editor-font-size);
 }
 
+/* math */
+.cm-s-obsidian .cm-math {
+  color: var(--the-color);
+}
+
+/* Escape char */
+.cm-s-obsidian span.cm-hmd-escape-char,
+.cm-s-obsidian span.cm-hmd-escape-backslash {
+  color: var(--the-color);
+}
+
 /* View header */
 .view-header-icon,
 .view-header-icon:hover {
