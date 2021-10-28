@@ -10,6 +10,11 @@
   --not-existent-note: "+";
   --pin-command: "*";
   --selected: ">";
+  --active-tab: "^";
+  --collapse-right: ">";
+  --collapse-down: "v";
+  --show-more-top: "+\\";
+  --show-more-bottom: "+/";
 }
 
 .theme-dark {
@@ -358,8 +363,80 @@ input.prompt-input {
   border: 1px solid var(--the-color)
 }
 
-/* Side Panels */
+/* SIDE PANELS */
+/********************************************/
 .mod-right-split {
   margin-left: -1px;
-  border-left: 1px solid var(--the-color);
+  border-left: 0.9px solid var(--the-color);
+  border-bottom: 1px solid var(--the-color);
+}
+/* Active tab */
+.workspace-tab-header-container {
+  height: 36px;
+  margin-bottom: 10px;
+}
+.workspace-tab-header.is-active:after {
+  content: var(--active-tab);
+  color: var(--the-color);
+  position: relative;
+  top: -10px;
+}
+/********************************************/
+
+/* Collapse Icons */
+.collapse-icon svg {
+  width: 0;
+}
+.is-collapsed .collapse-icon:before {
+  content: var(--collapse-right);
+  color: var(--the-color);
+  width: 8px;
+}
+.collapse-icon:before {
+  content: var(--collapse-down);
+  color: var(--the-color);
+  width: 8px;
+}
+
+/* Show more content icons */
+.search-result-hover-button.mod-top:before,
+.search-result-hover-button.mod-bottom:before {
+  width: 16px;
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+}
+.search-result-hover-button.mod-top:before {
+  content: var(--show-more-top);
+  top: -4px;
+}
+.search-result-hover-button.mod-bottom:before {
+  content: var(--show-more-bottom);
+  bottom: -4px
+}
+.search-result-hover-button.mod-top svg,
+.search-result-hover-button.mod-bottom svg {
+  width: 0;
+}
+
+/* Search Result */
+.search-result-file-match + .search-result-file-match {
+  border-top: 0.5px solid var(--the-color);
+  border-radius: 0;
+}
+.search-result-file-match:not(:last-child) {
+  margin-bottom: 0;
+}
+
+/* Not created files */
+div[aria-label*="Not created"]:before {
+  content: var(--not-existent-note);
+  color: var(--the-color);
+  position: relative;
+  right: 8px;
+  bottom: 1px;
+  font-weight: bold;
+}
+div[aria-label*="Not created"] svg {
+  width: 0;
 }
