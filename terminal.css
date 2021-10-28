@@ -383,7 +383,7 @@ input.prompt-input {
   bottom: 6px;
 }
 
-/* Suggestion (Slash Command) */
+/* Suggestion (Slash Command/Link suggestion) */
 .suggestion-container {
   max-width: unset;
   left: 0 !important;
@@ -395,6 +395,13 @@ input.prompt-input {
 }
 .suggestion {
   max-height: 100%;
+}
+.suggestion-item .suggestion-note {
+  /* display: none; */
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 /* Setting/Store page */
@@ -564,4 +571,7 @@ div[aria-label*="Not created"] svg {
   margin-top: -1px;
   border-top: 0.98px solid var(--the-color);
 }
+
+/* PAGE PREVIEW */
+
 
