@@ -340,6 +340,20 @@ input.prompt-input {
   bottom: 6px;
 }
 
+/* Suggestion (Slash Command) */
+.suggestion-container {
+  max-width: unset;
+  left: 0 !important;
+  width: 100%;
+  height: calc(var(--editor-line-height) * var(--editor-font-size) * 10 + 2px);
+  border-radius: 0;
+  border-width: 1px 0 1px 0;
+  padding: 0 10px 0 10px;
+}
+.suggestion {
+  max-height: 100%;
+}
+
 /* Setting/Store page */
 .modal.mod-settings,
 .modal.mod-community-plugin,
@@ -369,7 +383,7 @@ input.prompt-input {
   width: 10px;
 }
 .vertical-tab-nav-item.is-active {
-  padding-left: 6px;
+  text-indent: -17.9px;
 }
 
 /* SIDE PANELS */
