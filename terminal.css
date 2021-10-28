@@ -83,6 +83,54 @@ input[type='number'] {
   margin-left: -5px;
 }
 
+/* Hider */
+/* Frameless */
+body {
+  padding-top: 0 !important;
+}
+/* Hide ribbon */
+.workspace-ribbon.mod-left {
+  display:none;
+}
+.workspace-ribbon.mod-right {
+  visibility:hidden;
+  position:absolute;
+}
+.workspace-split.mod-right-split,
+.workspace-split.mod-left-split {
+  margin-right:0;
+}
+/* Frameless */
+.titlebar-button-container {
+  display:none;
+}
+.titlebar,
+.titlebar-inner {
+  position:fixed;
+  top:0;
+  height:12px;
+  background:transparent;
+}
+.workspace-split.mod-left-split > .workspace-tabs {
+  padding-top:18px;
+}
+/* Hide meta */
+.hider-meta .frontmatter-container {
+  display:none;
+}
+/* Hide scrollbars */
+.hider-scroll ::-webkit-scrollbar {
+  display:none;
+}
+/* Hide search suggestions */
+/* .suggestion-container.mod-search-suggestion {
+  display: none;
+} */
+/* Hide instructions */
+.prompt-instructions {
+  display:none;
+}
+
 /* EDITOR */
 /******************************/
 .markdown-source-view.mod-cm5 {
