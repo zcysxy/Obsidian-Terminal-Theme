@@ -3,7 +3,7 @@
 :root {
   --the-font: 'Syne Mono','Fira Code';
   --the-font-size: 16px;
-  --editor-line-height: 1.3;
+  --editor-line-height: 1.5;
   --char-width: 10px;
 
   --default-font: var(--the-font);
@@ -18,6 +18,9 @@
   --collapse-down: "v";
   --show-more-top: "+\\";
   --show-more-bottom: "+/";
+}
+body {
+  line-height: var(--editor-line-height);
 }
 
 .theme-dark {
@@ -317,7 +320,7 @@ a[aria-label="More options"]:before {
 /* Prompt */
 .prompt {
   display: unset;
-  /* position: fixed; */
+  /* position: absolute; */
   bottom: var(--status-bar-height);
   top: 50%;
   width: 100%;
@@ -326,9 +329,13 @@ a[aria-label="More options"]:before {
   border-style: solid;
   border-width: 1px 0 1px 0;
   border-radius: unset;
+  padding-top: 9px;
 }
 .prompt-results {
-  max-height: 90%;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  /* max-height: 90%; */
   padding-top: 0;
 }
 .modal-bg {
