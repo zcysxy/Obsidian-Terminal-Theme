@@ -48,7 +48,7 @@
   --text-on-accent: var(--the-color);
   --interactive-normal: #2a2a2a;
   --interactive-hover: #303030;
-  --interactive-accent: var(--the-color);
+  --interactive-accent: #000000;
   --interactive-accent-rgb: var(--the-color-rgb);
   --interactive-accent-hover: #000000;
   --interactive-success: #197300;
