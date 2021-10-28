@@ -2,8 +2,9 @@
 
 :root {
   --the-font: 'Syne Mono','Fira Code';
-  /* --editor-font-size: 16px; */
+  --the-font-size: 16px;
   --editor-line-height: 1.3;
+  --char-width: 10px;
 
   --default-font: var(--the-font);
   --font-monospace: var(--the-font);
@@ -139,7 +140,7 @@ body {
 }
 .cm-s-obsidian {
   line-height: var(--editor-line-height);
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
   font-family: var(--the-font);
   /* top border */
   border-style: solid;
@@ -152,7 +153,7 @@ body {
   content: var(--prompt);
   position: absolute;
   left: -0.5em;
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
   color: var(--the-color);
   font-family: fira code;
 }
@@ -169,7 +170,7 @@ body {
   line-height: var(--editor-line-height) !important;
 }
 .cm-header {
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
 }
 
 /* Inline Formats */
@@ -178,7 +179,7 @@ body {
 }
 .cm-s-obsidian span.cm-inline-code {
   color: var(--the-color);
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
   font-style: italic;
 }
 
@@ -186,7 +187,7 @@ body {
 .cm-s-obsidian span.cm-highlight {
   background-color: unset;
   font-weight: bold;
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
 }
 
 /* List */
@@ -216,7 +217,7 @@ pre.CodeMirror-line {
 .cm-formatting.cm-formatting-code-block,
 .cm-hmd-codeblock {
   color: var(--the-color);
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
   line-height: var(--editor-line-height);
 }
 
@@ -224,7 +225,7 @@ pre.CodeMirror-line {
 .cm-s-obsidian span.cm-footref:not(.cm-formatting-link),
 .cm-s-obsidian span.cm-blockid,
 .cm-s-obsidian .HyperMD-footnote span.cm-hmd-barelink:not(.cm-formatting-link) {
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
   font-style: italic;
   vertical-align: unset;
   display: inline;
@@ -239,7 +240,7 @@ pre.CodeMirror-line {
 }
 .cm-s-obsidian .HyperMD-footnote {
   padding-left: 5px;
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
 }
 
 /* math */
@@ -260,7 +261,7 @@ pre.CodeMirror-line {
   align-items: baseline;
 }
 .view-header-title {
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
   padding-top: 1.5px;
 }
 .view-header-icon,
@@ -276,7 +277,7 @@ pre.CodeMirror-line {
   content: "PWD:";
   color: #23ff18;
   font-weight: bold;
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
   position: relative;
   bottom: 2px;
   /* margin-right: -10px; */
@@ -290,7 +291,7 @@ pre.CodeMirror-line {
 .view-action:before {
   color: #23ff18;
   font-weight: bold;
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
   position: relative;
   bottom: 3px;
 }
@@ -304,13 +305,13 @@ pre.CodeMirror-line {
   content: "/q";
   color: #23ff18;
   font-weight: bold;
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
 }
 a[aria-label="More options"]:before {
   content: "/?";
   color: #23ff18;
   font-weight: bold;
-  font-size: var(--editor-font-size);
+  font-size: var(--the-font-size);
 }
 
 /* Prompt */
@@ -388,7 +389,7 @@ input.prompt-input {
   max-width: unset;
   left: 0 !important;
   width: 100%;
-  height: calc(var(--editor-line-height) * var(--editor-font-size) * 10 + 2px);
+  height: calc(var(--editor-line-height) * var(--the-font-size) * 10 + 2px);
   border-radius: 0;
   border-width: 1px 0 1px 0;
   padding: 0 10px 0 10px;
@@ -573,5 +574,134 @@ div[aria-label*="Not created"] svg {
 }
 
 /* PAGE PREVIEW */
+.popover.hover-popover.is-loaded {
+  width: 100%;
+  left: 0 !important;
+  border-radius: 0;
+  border-width: 1px 0;
+  border-top: 1px solid var(--the-color);
+  border-bottom: 1px solid var(--the-color);
+  /* height: calc(var(--editor-line-height) * var(--the-font-size) * 10 + 2px); */
+  height: 400px;
+  max-height: unset;
+}
+.popover.hover-popover .markdown-embed {
+  height: 100%;
+}
 
+/* EMBED PREVIEW */
+/******************************/
+.markdown-embed .markdown-preview-view {
+  padding: 10px 25px;
+  line-height: var(--editor-line-height);
+  font-size: var(--the-font-size);
+  font-family: var(--the-font);
+}
 
+/* Headers */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  margin: 0;
+  font-size: var(--the-font-size);
+}
+
+/* Inline Formats */
+.markdown-preview-view p {
+  margin: 0;
+}
+.markdown-preview-view code {
+  color: var(--the-color);
+  padding: 0;
+  font-size: var(--the-font-size);
+  font-style: italic;
+}
+
+.markdown-preview-view mark {
+  background-color: unset;
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--the-color);
+}
+
+.external-link {
+  padding-right: 0;
+  background: none;
+}
+
+/* List */
+.markdown-preview-view ul {
+  margin: 0;
+  padding-inline-start: calc(2 * var(--char-width));
+}
+.markdown-preview-view ol {
+  margin: 0;
+  margin-left: var(--char-width);
+  padding-inline-start: calc(2 * var(--char-width));
+}
+.markdown-preview-view ol li {
+  padding-inline-start: 0;
+}
+.markdown-preview-view input.task-list-item-checkbox {
+  margin: 0;
+  width: calc(6.5 * var(--char-width));
+}
+.markdown-preview-view .task-list-item-checkbox {
+  filter: hue-rotate(290);
+}
+
+/* Embed */
+span.internal-embed.file-embed.mod-empty.is-loaded {
+  margin: -1px;
+  border-radius: 0;
+  padding: calc(var(--editor-line-height) * var(--the-font-size)) calc(2 * var(--char-width));
+}
+
+/* Blockquote */
+.markdown-preview-view blockquote {
+  border-radius: 0;
+  border-left-width: 1px;
+  margin: 0;
+  padding: calc(var(--editor-line-height) * var(--the-font-size)) calc(2 * var(--char-width));
+}
+
+/* Code block */
+.markdown-preview-view pre,
+.markdown-preview-view pre[class*="language-"] {
+  margin: 0;
+  padding: 0;
+  padding-left: calc(2 * var(--char-width));
+  line-height: var(--editor-line-height);
+}
+.markdown-preview-view code,
+.markdown-preview-view code[class*="language-"] {
+  font-style: normal;
+  line-height: var(--editor-line-height);
+}
+
+/* Table */
+.markdown-preview-view table {
+  margin: 0;
+}
+.markdown-preview-view th, .markdown-preview-view td {
+  padding: 0 var(--char-width);
+}
+
+/* Footnote */
+sup {
+  vertical-align: unset;
+  font-size: var(--the-font-size);
+}
+
+/* hr */
+.markdown-preview-view hr {
+  margin: 0;
+  margin-top: calc(var(--editor-line-height) * var(--the-font-size));
+  height: calc(var(--editor-line-height) * var(--the-font-size));
+}
+/******************************/
