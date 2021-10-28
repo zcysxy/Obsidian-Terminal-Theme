@@ -335,6 +335,8 @@ a[aria-label="More options"]:before {
   position: absolute;
   top: 50px;
   bottom: 0;
+  right: 10px;
+  left: 10px;
   /* max-height: 90%; */
   padding-top: 0;
 }
