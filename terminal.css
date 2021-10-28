@@ -163,6 +163,28 @@ button {
   line-height: var(--editor-line-height);
 }
 
+/* Footnote */
+.cm-s-obsidian span.cm-footref:not(.cm-formatting-link),
+.cm-s-obsidian span.cm-blockid,
+.cm-s-obsidian .HyperMD-footnote span.cm-hmd-barelink:not(.cm-formatting-link) {
+  font-size: var(--editor-font-size);
+  font-style: italic;
+  vertical-align: unset;
+  display: inline;
+  margin-top: -0;
+  text-decoration: underline;
+}
+.cm-s-obsidian span.cm-link.cm-hmd-barelink:not(.cm-formatting-link) {
+  font-style: italic;
+}
+.cm-s-obsidian .HyperMD-footnote span.cm-hmd-footnote:not(.cm-formatting-link) {
+  text-decoration: underline;
+}
+.cm-s-obsidian .HyperMD-footnote {
+  padding-left: 5px;
+  font-size: var(--editor-font-size);
+}
+
 /* View header */
 .view-header-icon,
 .view-header-icon:hover {
