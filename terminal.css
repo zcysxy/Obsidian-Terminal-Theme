@@ -1,5 +1,7 @@
+/* @import url('https://fonts.googleapis.com/css?family=Syne+Mono'); */
+
 :root {
-  --the-font: 'Fira Code';
+  --the-font: 'Syne Mono','Fira Code';
   /* --editor-font-size: 16px; */
   --editor-line-height: 1.3;
 
@@ -89,12 +91,9 @@ body {
   padding-top: 0 !important;
 }
 /* Hide ribbon */
-.workspace-ribbon.mod-left {
-  display:none;
-}
+.workspace-ribbon.mod-left,
 .workspace-ribbon.mod-right {
-  visibility:hidden;
-  position:absolute;
+  display:none;
 }
 .workspace-split.mod-right-split,
 .workspace-split.mod-left-split {
@@ -113,10 +112,6 @@ body {
 }
 .workspace-split.mod-left-split > .workspace-tabs {
   padding-top:18px;
-}
-/* Hide meta */
-.hider-meta .frontmatter-container {
-  display:none;
 }
 /* Hide scrollbars */
 .hider-scroll ::-webkit-scrollbar {
