@@ -6,11 +6,27 @@
 
 ![](screenshots/terminal.png)
 
+## Features
+
+* Open Command Palette/ Quick Switcher like another terminal pane!
+
 ![](screenshots/command-palette.png)
-<p align="center">Command Palette</p>
+<!-- <p align="center">Command Palette</p> -->
 
 ![](screenshots/quick-switcher.png)
-<p align="center">Quick Switcher</p>
+<!-- <p align="center">Quick Switcher</p> -->
+
+* Open suggestion window (Slash Command, Link/Tag Autocomplete) like a *peek window*!
+
+![](screenshots/suggestion.png)
+
+* Find & Replace like in a real terminal editor!
+
+![](screenshots/search-replace.png)
 
 ![](screenshots/panes.png)
-<p align="center">Panes</p>
+<!-- <p align="center">Panes</p> -->
+
+* Split panes like a real pro!
+
+![](screenshots/panes.png)

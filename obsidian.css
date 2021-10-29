@@ -367,7 +367,7 @@ input.prompt-input {
   padding: 0 0 0 15px;
   border-style: solid;
   border-color: transparent;
-  border-width: 1px 0;
+  border-width: 0;
 }
 /* .is-selected {
   border-style: solid;
@@ -405,7 +405,7 @@ input.prompt-input {
   max-width: unset;
   left: 0 !important;
   width: 100%;
-  height: calc(var(--editor-line-height) * var(--the-font-size) * 10 + 2px);
+  height: calc(var(--editor-line-height) * var(--the-font-size) * 8 + 2px);
   border-radius: 0;
   border-width: 1px 0 1px 0;
   padding: 0 10px 0 10px;
