@@ -984,3 +984,19 @@ button.document-search-button:not([aria-label]):before {
   position: absolute;
   bottom: -22px;
 }
+
+/* Empty State */
+.empty-state-container {
+  /* margin: 0; */
+  /* padding: 20px; */
+  border: 1px dashed var(--the-color);
+}
+.empty-state-container:after {
+  content: "\\   ^__^\A  \\  (oo)\\_______\A     (__)\\       )\\/\\\A         ||----w |\A         ||     ||";
+  white-space: pre;
+  position: absolute;
+  right: 10px;
+}
+.empty-state-title {
+  /* margin-top: 0; */
+}
