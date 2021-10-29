@@ -867,6 +867,16 @@ canvas {
 }
 
 /* Search */
+.document-search-container,
+.document-search-container.mod-replace-mode {
+  height: auto;
+  padding: 0 5px;
+  border-top: 0;
+}
+.document-search,
+.document-replace {
+  height: calc(var(--editor-line-height) * var(--the-font-size));
+}
 .search-input-container > input,
 .document-search > input[type='text'],
 .document-search > input[type='text']:focus,
@@ -875,29 +885,28 @@ canvas {
 .document-replace > input[type='text']:focus,
 .document-replace > input[type='text']:hover {
   border-width: 0;
-  padding-left: 12px;
+  padding: 0 14px 1px 12px;
   background-color: var(--background-primary);
+  height: calc(var(--editor-line-height) * var(--the-font-size));
+  margin: 0 8px;
 }
 .document-search > .document-search-buttons:before {
   content: var(--search);
   position: absolute;
   font-size: var(--the-font-size);
-  top: 8px;
   left: 15px;
 }
 .document-replace > .document-replace-buttons:before {
   content: var(--replace);
   position: absolute;
   font-size: var(--the-font-size);
-  top: 43px;
   left: 15px;
-}
-button.document-search-button {
-  /* color: transparent; */
 }
 button.document-search-button {
   font-size: 0;
   border: none;
+  margin-top: 0;
+  padding-bottom: 4px;
 }
 button.document-search-button:before {
   font-size: var(--the-font-size);
