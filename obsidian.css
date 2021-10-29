@@ -20,6 +20,11 @@
   --show-more-bottom: "+/";
   --search: "/";
   --replace: ":";
+  --prev: "<";
+  --next: ">";
+  --all: "-a";
+  --close: "x";
+  --quit: "/q";
 }
 body {
   line-height: var(--editor-line-height);
@@ -55,7 +60,7 @@ body {
   --text-selection: rgba(23, 48, 77, 0.99);
   --text-on-accent: var(--the-color);
   --interactive-normal: #000000;
-  --interactive-hover: #303030;
+  --interactive-hover: #000000;
   --interactive-accent: #000000;
   --interactive-accent-rgb: var(--the-color-rgb);
   --interactive-accent-hover: #000000;
@@ -479,11 +484,11 @@ input.prompt-input {
 /* Close button */
 .modal-close-button {
   top: 4px;
-  right: 4px;
+  right: 10px;
   font-size: var(--the-font-size);
 }
 .modal-close-button::before {
-  content: "/q";
+  content: var(--close);
 }
 
 /* Title & Heading */
@@ -886,4 +891,36 @@ canvas {
   font-size: var(--the-font-size);
   top: 43px;
   left: 15px;
+}
+button.document-search-button {
+  /* color: transparent; */
+}
+button.document-search-button {
+  font-size: 0;
+  border: none;
+}
+button.document-search-button:before {
+  font-size: var(--the-font-size);
+}
+button.document-search-button[aria-label='Shift + F3']:before {
+  content: var(--prev);
+}
+button.document-search-button[aria-label='Enter or F3']:before {
+  content: var(--next);
+}
+button.document-search-button[aria-label='Enter']:before {
+  content: var(--next);
+}
+button.document-search-button:not([aria-label]):before {
+  content: var(--all);
+}
+.document-search-close-button:before {
+  content: var(--close);
+  font-size: var(--the-font-size);
+}
+.document-search-close-button {
+  top: unset;
+}
+.document-replace-buttons {
+  margin-right: 20px;
 }
