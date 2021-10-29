@@ -22,11 +22,9 @@
 
 * Find & Replace like in a real terminal editor!
 
-![](screenshots/search-replace.png)
-
-![](screenshots/panes.png)
-<!-- <p align="center">Panes</p> -->
+![](screenshots/find-replace.png)
 
 * Split panes like a real pro!
 
 ![](screenshots/panes.png)
+<!-- <p align="center">Panes</p> -->
