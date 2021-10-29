@@ -51,7 +51,7 @@ body {
   --text-accent-hover: #000000;
   --text-normal: var(--the-color);
   --text-muted: var(--the-color);
-  --text-muted-rgb: 153, 153, 153;
+  --text-muted-rgb: var(--the-color-rgb);
   --text-faint: var(--the-color);
   --text-error: #ff3333;
   --text-error-hover: #990000;
@@ -293,8 +293,10 @@ pre.CodeMirror-line {
   /* margin-right: -10px; */
 }
 
-.view-action,
-.view-action:hover {
+.view-action[aria-label="Close"],
+.view-action[aria-label="More options"],
+.view-action[aria-label*="Preview"],
+.view-action[aria-label*="Edit"] {
   color: transparent;
   width: 1rem;
 }
@@ -745,7 +747,7 @@ span.internal-embed.file-embed.mod-empty.is-loaded {
 .markdown-preview-view blockquote {
   border-radius: 0;
   border-left-width: 1px;
-  margin: 0;
+  margin: -1px 0;
   padding: calc(var(--editor-line-height) * var(--the-font-size)) calc(2 * var(--char-width));
 }
 
@@ -782,6 +784,47 @@ sup {
   margin: 0;
   margin-top: calc(var(--editor-line-height) * var(--the-font-size));
   height: calc(var(--editor-line-height) * var(--the-font-size));
+}
+
+/* Metadata */
+.frontmatter-container {
+  padding: calc(var(--editor-line-height) * var(--the-font-size)) calc(2 * var(--char-width));
+  border-radius: 0;
+  font-size: var(--the-font-size);
+  margin: -1px 0;
+}
+.frontmatter-container .frontmatter-container-header {
+  font-size: var(--the-font-size);
+  margin: 0 0 -1px 0;
+}
+.frontmatter-container .frontmatter-collapse-indicator:before {
+  font-weight: normal;
+}
+.frontmatter-container .frontmatter-section {
+  margin: 0;
+}
+.frontmatter-container .tag,
+.frontmatter-container .frontmatter-alias {
+  font-size: var(--the-font-size);
+  border-radius: 0;
+  padding: 0 0;
+  margin: 0 var(--char-width);
+  line-height: var(--editor-line-height);
+  border-width: 0;
+  background-color: transparent;
+}
+.frontmatter-container .mod-aliases .frontmatter-section-label {
+  flex-basis: calc(8 * var(--char-width));
+}
+.frontmatter-container .mod-tags .frontmatter-section-label {
+  flex-basis: calc(5 * var(--char-width));
+}
+.frontmatter-container .frontmatter-alias-icon {
+  width: var(--char-width);
+  margin-right: 0;
+}
+.frontmatter-container .frontmatter-alias-icon > svg {
+  width: 10px !important;
 }
 /***************************** */
 
@@ -932,4 +975,12 @@ button.document-search-button:not([aria-label]):before {
 }
 .document-replace-buttons {
   margin-right: 20px;
+}
+
+/* Global search close button */
+.search-input-clear-button:before {
+  content: var(--close);
+  font-size: var(--the-font-size);
+  position: absolute;
+  bottom: -22px;
 }
