@@ -829,3 +829,21 @@ canvas {
 .CodeMirror-gutters {
   left: var(--char-width) !important;
 }
+
+/* Preview folding */
+.markdown-preview-view.allow-fold-heading,
+.markdown-preview-view.allow-fold-lists {
+  padding-left: 30px;
+}
+.markdown-preview-view ul > li > .list-collapse-indicator {
+  padding-left: 14px;
+  padding-top: 2px;
+}
+.markdown-preview-view ol > li > .list-collapse-indicator {
+  padding-left: 2px;
+  padding-top: 0.5px;
+}
+.markdown-preview-view li.task-list-item .list-collapse-indicator {
+  padding-left: 12px;
+  padding-top: 0.5px;
+}
