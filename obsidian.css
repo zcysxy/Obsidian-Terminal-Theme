@@ -558,7 +558,7 @@ input[type='range']::-webkit-slider-thumb {
 .is-collapsed .collapse-icon:before,
 .collapse-icon:before {
   color: var(--the-color);
-  /* width: 8px; */
+  width: 3px;
   position: relative;
   bottom: 1px;
   font-weight: bold;
