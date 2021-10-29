@@ -778,3 +778,54 @@ sup {
 canvas {
   border-top: 1px solid var(--the-color) !important;
 }
+
+/* Search result matched color */
+.search-result-file-matched-text {
+  background-color: unset;
+  border: 1px solid var(--the-color);
+  margin: -1px;
+}
+
+/* GUTTER */
+.CodeMirror-foldgutter-open:after {
+  content: var(--collapse-down);
+  font-size: var(--the-font-size);
+}
+.CodeMirror-foldgutter-folded:after {
+  content: var(--collapse-right);
+  font-size: var(--the-font-size);
+}
+.CodeMirror-foldgutter-open,
+.CodeMirror-foldgutter-folded {
+  font-size: var(--the-font-size);
+  display: flex;
+  align-items: center;
+}
+/* Move gutter to the left */
+/* And keep gutter 4-char-width for line number, */
+/* keep gutter 1-char-width for gutter only */
+.CodeMirror-linenumber {
+  min-width: none;
+  width: calc(3 * var(--char-width)) !important;
+  padding: 0;
+}
+.CodeMirror-gutter.CodeMirror-linenumbers {
+  width: calc(3 * var(--char-width)) !important;
+}
+.CodeMirror-sizer[style*="margin-left: 35px"],  /* line number only */
+.CodeMirror-sizer[style*="margin-left: 46px"] { /* line number + gutter */
+  margin-left: calc(4 * var(--char-width)) !important;
+}
+.CodeMirror-sizer[style*="margin-left: 16px"] { /* gutter only */
+  margin-left: calc(1 * var(--char-width)) !important;
+}
+.CodeMirror-sizer[style*="margin-left: 35px"] .CodeMirror-gutter-wrapper,
+.CodeMirror-sizer[style*="margin-left: 46px"] .CodeMirror-gutter-wrapper {
+  left: calc(-30px - 2 * var(--char-width)) !important;
+}
+.CodeMirror-sizer[style*="margin-left: 16px"] .CodeMirror-gutter-wrapper {
+  left: calc(-2 * var(--char-width)) !important;
+}
+.CodeMirror-gutters {
+  left: var(--char-width) !important;
+}
