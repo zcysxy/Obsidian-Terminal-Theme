@@ -854,3 +854,9 @@ canvas {
   padding-left: 12px;
   padding-top: 0.5px;
 }
+
+/* Search */
+.search-input-container > input,
+.document-search > input {
+  border-width: 0;
+}
