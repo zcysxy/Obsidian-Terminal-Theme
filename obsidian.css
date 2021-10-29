@@ -18,6 +18,8 @@
   --collapse-down: "v";
   --show-more-top: "+\\";
   --show-more-bottom: "+/";
+  --search: "/";
+  --replace: ":";
 }
 body {
   line-height: var(--editor-line-height);
@@ -52,7 +54,7 @@ body {
   --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
   --text-selection: rgba(23, 48, 77, 0.99);
   --text-on-accent: var(--the-color);
-  --interactive-normal: #2a2a2a;
+  --interactive-normal: #000000;
   --interactive-hover: #303030;
   --interactive-accent: #000000;
   --interactive-accent-rgb: var(--the-color-rgb);
@@ -413,6 +415,10 @@ input.prompt-input {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+/* Position adjustment when window is above */
+.suggestion-container:before {
+  content: attr(top) !important;
 }
 
 /* Setting/Store page */
@@ -857,6 +863,27 @@ canvas {
 
 /* Search */
 .search-input-container > input,
-.document-search > input {
+.document-search > input[type='text'],
+.document-search > input[type='text']:focus,
+.document-search > input[type='text']:hover,
+.document-replace > input[type='text'],
+.document-replace > input[type='text']:focus,
+.document-replace > input[type='text']:hover {
   border-width: 0;
+  padding-left: 12px;
+  background-color: var(--background-primary);
+}
+.document-search > .document-search-buttons:before {
+  content: var(--search);
+  position: absolute;
+  font-size: var(--the-font-size);
+  top: 8px;
+  left: 15px;
+}
+.document-replace > .document-replace-buttons:before {
+  content: var(--replace);
+  position: absolute;
+  font-size: var(--the-font-size);
+  top: 43px;
+  left: 15px;
 }
