@@ -780,9 +780,16 @@ canvas {
 }
 
 /* Search result matched color */
-.search-result-file-matched-text {
+.search-result-file-matched-text,
+.cm-s-obsidian span.obsidian-search-match-highlight,
+.markdown-preview-view .search-highlight > div,
+.markdown-preview-view .search-highlight > div.is-active {
   background-color: unset;
   border: 1px solid var(--the-color);
+  mix-blend-mode: normal;
+}
+.cm-s-obsidian span.obsidian-search-match-highlight,
+.search-result-file-matched-text {
   margin: -1px;
 }
 
