@@ -129,6 +129,23 @@ input[type='number'] {
   padding-left: 0;
   margin-left: -5px;
 }
+.status-bar-item {
+  border: 1px solid red;
+  padding: 0px;
+  display: inline;
+  padding-right: 10px;
+}
+.status-bar > .status-bar-item:after {
+  content: "";
+  position: relative;
+  right: 0px;
+  bottom: 0px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid var(--the-color);
+}
 
 /* Hider */
 /* Frameless */
@@ -700,7 +717,7 @@ div[aria-label*="Not created"] svg {
 .workspace-leaf + .workspace-split.mod-horizontal,
 .workspace-split.mod-horizontal + .workspace-leaf,
 .workspace-split.mod-horizontal + .workspace-split.mod-horizontal {
-  margin-left: -1px;
+  /* margin-left: -1px; */ /* Removed to fixed dettached PWD */
   border-left: 1px solid var(--the-color);
 }
 .workspace-leaf + .workspace-split.mod-vertical,
