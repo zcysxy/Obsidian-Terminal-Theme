@@ -285,6 +285,7 @@ pre.CodeMirror-line {
 .view-header {
   flex-wrap: nowrap;
   align-items: baseline;
+  border-width: 0;
 }
 .view-header-title {
   font-size: var(--the-font-size);
@@ -293,21 +294,37 @@ pre.CodeMirror-line {
 /* Active Pane Prompt (Header Icon) */
 .mod-active .view-header-icon,
 .mod-active .view-header-icon:hover {
+  background-color: var(--the-color);
   color: transparent;
   font-size: var(--the-font-size);
   padding-right: 0;
-  width: 3em;
-  /* height: 30px;
-  border: 1px solid var(--the-color); */
+  width: calc(4 * var(--char-width));
+  margin-right: 20px;
+  height: 37px;
+  top: -1px;
+  border: 1px solid var(--the-color);
+  border-right: 10px solid transparent;
   padding-top: 0.25rem !important;
+}
+.mod-active .view-header-icon:after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  top: 0;
+  width: 0; 
+  height: 0; 
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 18px solid var(--the-color); 
 }
 .mod-active .view-header-icon:before {
   content: var(--pwd);
-  color: #23ff18;
+  color: #000000;
   font-weight: bold;
   font-size: var(--the-font-size);
-  position: relative;
-  bottom: 2px;
+  position: absolute;
+  bottom: 4px;
+  left: 6px;
   /* margin-right: -10px; */
   /* border: 1px solid var(--the-color); */
 }
