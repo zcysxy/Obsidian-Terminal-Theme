@@ -1,3 +1,4 @@
+
 /********************************************************
 
         ____  ____ _____ ________  _______    _   __    
@@ -39,6 +40,8 @@ Github: https://github.com/zcysxy/Obsidian-Terminal-Theme
   --default-font: var(--the-font);
   --font-monospace: var(--the-font);
   --status-bar-height: 21px;
+
+  /* Prompts */
   --prompt: "$";
   --not-existent-note: "+";
   --pin-command: "*";
@@ -824,6 +827,7 @@ span.internal-embed.file-embed.mod-empty.is-loaded {
   padding: 0;
   padding-left: calc(2 * var(--char-width));
   line-height: var(--editor-line-height);
+  background: transparent;
 }
 .markdown-preview-view code,
 .markdown-preview-view code[class*="language-"] {
