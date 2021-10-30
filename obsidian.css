@@ -32,6 +32,9 @@ Github: https://github.com/zcysxy/Obsidian-Terminal-Theme
 
 /* Root Variables */
 :root {
+  --the-color: #15d00d;
+  --the-color-rgb: 35, 255, 24;
+  --the-background-color: #000000;
   --the-font: Fira Code;
   --the-font-size: 16px;
   --editor-line-height: 1.5;
@@ -66,13 +69,10 @@ body {
 }
 
 .theme-dark {
-  --the-color: #23ff18;
-  --the-color-rgb: 35, 255, 24;
-
-  --background-primary: #000000;
-  --background-primary-alt: #000000;
-  --background-secondary: #000000;
-  --background-secondary-alt: #000000;
+  --background-primary: var(--the-background-color);
+  --background-primary-alt: var(--the-background-color);
+  --background-secondary: var(--the-background-color);
+  --background-secondary-alt: var(--the-background-color);
   --background-modifier-border: var(--the-color);
   --background-modifier-form-field: rgba(0, 0, 0, 0.3);
   --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.22);
@@ -94,11 +94,11 @@ body {
   --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
   --text-selection: rgba(23, 48, 77, 0.99);
   --text-on-accent: var(--the-color);
-  --interactive-normal: #000000;
-  --interactive-hover: #000000;
-  --interactive-accent: #000000;
+  --interactive-normal: var(--the-background-color);
+  --interactive-hover: var(--the-background-color);
+  --interactive-accent: var(--the-background-color);
   --interactive-accent-rgb: var(--the-color-rgb);
-  --interactive-accent-hover: #000000;
+  --interactive-accent-hover: var(--the-background-color);
   --interactive-success: #197300;
   --scrollbar-active-thumb-bg: rgb(255, 255, 255);
   --scrollbar-bg: rgba(255, 255, 255, 0.05);
@@ -139,14 +139,14 @@ input[type='number'] {
   padding-left: 10px;
   /* display: block; */
   position: relative; /* for :after's relative to work! */
-  color: #000000;
+  color: var(--the-background-color);
   background-color: var(--the-color);
 }
 .status-bar-item:not(:first-child) {
   margin-left: calc(5px + 0.5 * var(--status-bar-height));
 }
 .status-bar-item svg {
-  fill: #000000 !important;
+  fill: var(--the-background-color) !important;
 }
 .status-bar > .status-bar-item:after {
   content: "";
@@ -168,7 +168,7 @@ input[type='number'] {
   height: 0;
   border-top: calc(0.5 * var(--status-bar-height) - 1px) solid transparent;
   border-bottom: calc(0.5 * var(--status-bar-height)) solid transparent;
-  border-left: calc(0.5 * var(--status-bar-height)) solid #000000;
+  border-left: calc(0.5 * var(--status-bar-height)) solid var(--the-background-color);
   background-color: var(--the-color);
 }
 
@@ -387,7 +387,7 @@ pre.CodeMirror-line {
 }
 .mod-active .view-header-icon:before {
   content: var(--pwd);
-  color: #000000;
+  color: var(--the-background-color);
   font-weight: bold;
   font-size: var(--the-font-size);
   position: absolute;
