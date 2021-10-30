@@ -37,6 +37,7 @@
   --all: "-a";
   --close: "x";
   --quit: "/q";
+  --pwd: "PWD";
 }
 body {
   line-height: var(--editor-line-height);
@@ -289,23 +290,34 @@ pre.CodeMirror-line {
   font-size: var(--the-font-size);
   padding-top: 1.5px;
 }
-.view-header-icon,
-.view-header-icon:hover {
+/* Active Pane Prompt (Header Icon) */
+.mod-active .view-header-icon,
+.mod-active .view-header-icon:hover {
   color: transparent;
-  /* font-size: 0; */
-  /* margin-right: -1rem !important; */
+  font-size: var(--the-font-size);
   padding-right: 0;
   width: 3em;
+  /* height: 30px;
+  border: 1px solid var(--the-color); */
   padding-top: 0.25rem !important;
 }
-.view-header-icon:before {
-  content: "PWD:";
+.mod-active .view-header-icon:before {
+  content: var(--pwd);
   color: #23ff18;
   font-weight: bold;
   font-size: var(--the-font-size);
   position: relative;
   bottom: 2px;
   /* margin-right: -10px; */
+  /* border: 1px solid var(--the-color); */
+}
+.view-header-icon,
+.view-header-icon:hover {
+  color: transparent;
+  font-size: 0;
+  padding-right: 0;
+  width: 3em;
+  padding-top: 0.25rem !important;
 }
 
 .view-action[aria-label="Close"],

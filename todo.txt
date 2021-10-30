@@ -1,4 +1,4 @@
 2021-10-29 Search input @feat
 2021-10-30 Better suggestion position @feat @hard
-2021-10-30 Add Fira Code as base64 @accessibility
+x 2021-10-30 2021-10-30 Add Fira Code as base64 @accessibility
 x 2021-10-30 2021-10-30 archive test
