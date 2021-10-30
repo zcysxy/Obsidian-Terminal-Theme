@@ -128,23 +128,47 @@ input[type='number'] {
   justify-content: flex-start;
   padding-left: 0;
   margin-left: -5px;
+  line-height: var(--status-bar-height);
+  border-top: 0;
+  /* margin-top: -1px; */
+  max-height: var(--status-bar-height);
 }
 .status-bar-item {
-  border: 1px solid red;
-  padding: 0px;
-  display: inline;
-  padding-right: 10px;
+  padding-right: 5px;
+  padding-left: 10px;
+  /* display: block; */
+  position: relative; /* for :after's relative to work! */
+  color: #000000;
+  background-color: var(--the-color);
+}
+.status-bar-item:not(:first-child) {
+  margin-left: calc(5px + 0.5 * var(--status-bar-height));
+}
+.status-bar-item svg {
+  fill: #000000 !important;
 }
 .status-bar > .status-bar-item:after {
   content: "";
-  position: relative;
-  right: 0px;
+  position: absolute;
+  right: calc(-0.5 * var(--status-bar-height));
   bottom: 0px;
   width: 0;
   height: 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 10px solid var(--the-color);
+  border-top: calc(0.5 * var(--status-bar-height)) solid transparent;
+  border-bottom: calc(0.5 * var(--status-bar-height)) solid transparent;
+  border-left: calc(0.5 * var(--status-bar-height)) solid var(--the-color);
+}
+.status-bar > .status-bar-item:not(:last-child):before {
+  content: "";
+  position: absolute;
+  right: -16px;
+  bottom: 0px;
+  width: 0;
+  height: 0;
+  border-top: calc(0.5 * var(--status-bar-height)) solid transparent;
+  border-bottom: calc(0.5 * var(--status-bar-height)) solid transparent;
+  border-left: calc(0.5 * var(--status-bar-height)) solid #000000;
+  background-color: var(--the-color);
 }
 
 /* Hider */
@@ -717,7 +741,7 @@ div[aria-label*="Not created"] svg {
 .workspace-leaf + .workspace-split.mod-horizontal,
 .workspace-split.mod-horizontal + .workspace-leaf,
 .workspace-split.mod-horizontal + .workspace-split.mod-horizontal {
-  /* margin-left: -1px; */ /* Removed to fixed dettached PWD */
+  margin-left: -1px; /* Removed to fixed dettached PWD */
   border-left: 1px solid var(--the-color);
 }
 .workspace-leaf + .workspace-split.mod-vertical,
