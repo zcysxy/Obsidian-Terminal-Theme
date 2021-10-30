@@ -1,20 +1,20 @@
 
-/********************************************************
+/*********************************************************
 
-        ____  ____ _____ ________  _______    _   __    
-       / __ \/ __ ) ___//  _/ __ \/  _/   |  / | / /    
-      / / / / __  \__ \ / // / / // // /| | /  |/ /     
-     / /_/ / /_/ /__/ // // /_/ // // ___ |/ /|  /      
-     \____/_____/____/___/_____/___/_/  |_/_/ |_/__     
+          ____  ____ _____ ________  _______    _   __    
+         / __ \/ __ ) ___//  _/ __ \/  _/   |  / | / /     
+        / / / / __  \__ \ / // / / // // /| | /  |/ /     
+       / /_/ / /_/ /__/ // // /_/ // // ___ |/ /|  /      
+      _\____/_____/____/___/_____/___/_/  |_/_/ |_/     
      /_  __/ ____/ __ \/  |/  /  _/ | / /   |  / /     
       / / / __/ / /_/ / /|_/ // //  |/ / /| | / /      
      / / / /___/ _, _/ /  / // // /|  / ___ |/ /___    
     /_/ /_____/_/ |_/_/  /_/___/_/ |_/_/  |_/_____/    
-                                                        
+                                                          
 
     Created with :green_heart: by zcysxy (@Atlas#7560)
 Github: https://github.com/zcysxy/Obsidian-Terminal-Theme
-********************************************************/
+*********************************************************/
 
 /* --the-font: Fira Code */
 @font-face {
@@ -40,6 +40,7 @@ Github: https://github.com/zcysxy/Obsidian-Terminal-Theme
   --default-font: var(--the-font);
   --font-monospace: var(--the-font);
   --status-bar-height: 21px;
+  --header-height: 36px;
 
   /* Prompts */
   --prompt: "$";
@@ -129,7 +130,7 @@ input[type='number'] {
   padding-left: 0;
   margin-left: -5px;
   line-height: var(--status-bar-height);
-  border-top: 0;
+  border-top: 1px solid var(--the-color);
   /* margin-top: -1px; */
   max-height: var(--status-bar-height);
 }
@@ -165,7 +166,7 @@ input[type='number'] {
   bottom: 0px;
   width: 0;
   height: 0;
-  border-top: calc(0.5 * var(--status-bar-height)) solid transparent;
+  border-top: calc(0.5 * var(--status-bar-height) - 1px) solid transparent;
   border-bottom: calc(0.5 * var(--status-bar-height)) solid transparent;
   border-left: calc(0.5 * var(--status-bar-height)) solid #000000;
   background-color: var(--the-color);
@@ -362,20 +363,21 @@ pre.CodeMirror-line {
 .mod-active .view-header-icon:hover {
   background-color: var(--the-color);
   color: transparent;
-  font-size: var(--the-font-size);
+  font-size: 0;
   padding-right: 0;
   width: calc(4 * var(--char-width));
-  margin-right: 20px;
+  min-width: calc(4 * var(--char-width)); /* required for header flex display */
   height: 37px;
   top: -1px;
-  border: 1px solid var(--the-color);
-  border-right: 10px solid transparent;
   padding-top: 0.25rem !important;
+  border: 1px solid var(--the-color);
+  margin-right: 20px;
+  border-right: 10px solid transparent;
 }
 .mod-active .view-header-icon:after {
   content: "";
   position: absolute;
-  right: -28.3px;
+  right: -28px; /* 1/2 * header-height + .view-header-icon(padding-right) */
   top: -1px;
   width: 0; 
   height: 0; 
@@ -741,7 +743,7 @@ div[aria-label*="Not created"] svg {
 .workspace-leaf + .workspace-split.mod-horizontal,
 .workspace-split.mod-horizontal + .workspace-leaf,
 .workspace-split.mod-horizontal + .workspace-split.mod-horizontal {
-  margin-left: -1px; /* Removed to fixed dettached PWD */
+  margin-left: -1px;
   border-left: 1px solid var(--the-color);
 }
 .workspace-leaf + .workspace-split.mod-vertical,
@@ -754,6 +756,7 @@ div[aria-label*="Not created"] svg {
   margin-top: -1px;
   border-top: 0.98px solid var(--the-color);
 }
+
 
 /* PAGE PREVIEW */
 .popover.hover-popover.is-loaded {
@@ -1112,3 +1115,30 @@ button.document-search-button:not([aria-label]):before {
 .empty-state-title {
   /* margin-top: 0; */
 }
+
+/* TEST FILED */
+/* Fix dettached PWD */
+/* .workspace-leaf.mod-active {
+  contain: none;
+  margin-left: -1px;
+}
+.workspace-leaf.mod-active:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1px;
+  border-style: solid;
+  border-width: var(--header-height) 0px 0px 1px;
+  border-color: var(--the-color);
+  z-index: 9999;
+}
+.workspace-leaf.mod-active .view-header:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0px;
+  border-style: solid;
+  border-width: var(--header-height) 0px 0px 1px;
+  border-color: var(--the-color);
+  z-index: 9999;
+} */
