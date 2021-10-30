@@ -289,7 +289,11 @@ pre.CodeMirror-line {
 }
 .view-header-title {
   font-size: var(--the-font-size);
-  padding-top: 1.5px;
+  padding-top: 3px;
+}
+.workspace-split.mod-root > .workspace-leaf:last-of-type .workspace-leaf-content,
+.workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content {
+  border-radius: 0;
 }
 /* Active Pane Prompt (Header Icon) */
 .mod-active .view-header-icon,
@@ -309,8 +313,8 @@ pre.CodeMirror-line {
 .mod-active .view-header-icon:after {
   content: "";
   position: absolute;
-  right: -28px;
-  top: 0;
+  right: -28.3px;
+  top: -1px;
   width: 0; 
   height: 0; 
   border-top: 18px solid transparent;
