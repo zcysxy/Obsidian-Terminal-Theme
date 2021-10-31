@@ -10,9 +10,6 @@
 
 * Open Command Palette/ Quick Switcher like another terminal pane!
 
-![](screenshots/command-palette.png)
-<!-- <p align="center">Command Palette</p> -->
-
 ![](screenshots/quick-switcher.png)
 <!-- <p align="center">Quick Switcher</p> -->
 
@@ -22,7 +19,7 @@
 
 * Find & Replace like in a real terminal editor!
 
-![](screenshots/find-replace.png)
+![](screenshots/editor.png)
 
 * Split panes like a real pro!
 
