@@ -174,7 +174,7 @@ settings:
   --the-color-rgb: 35, 255, 24;
   --the-background-color: #000000;
   --the-font: Fira Code;
-  --the-font-size: 16px;
+  --the-font-size: 10px;
   --editor-line-height: 1.5;
   --char-width: calc(0.625 * var(--the-font-size)); /* the ratio is determined by the font-family */
 
@@ -218,10 +218,6 @@ body {
   --background-modifier-form-field: rgba(0, 0, 0, 0);
   --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0);
   --background-modifier-box-shadow: rgba(0, 0, 0, 0);
-  --background-modifier-success: #197300;
-  --background-modifier-error: #3d0000;
-  --background-modifier-error-rgb: 61, 0, 0;
-  --background-modifier-error-hover: #470000;
   --background-modifier-cover: rgba(0, 0, 0, 0.8);
   --text-accent: var(--the-color);
   --text-accent-hover: var(--the-color);
@@ -229,21 +225,27 @@ body {
   --text-muted: var(--the-color);
   --text-muted-rgb: var(--the-color-rgb);
   --text-faint: var(--the-color);
-  --text-error: #ff3333;
-  --text-error-hover: #990000;
-  --text-highlight-bg: rgba(255, 255, 0, 0.4);
-  --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
-  --text-selection: rgba(23, 48, 77, 0.99);
   --text-on-accent: var(--the-color);
   --interactive-normal: var(--the-background-color);
   --interactive-hover: var(--the-background-color);
   --interactive-accent: var(--the-background-color);
   --interactive-accent-rgb: var(--the-color-rgb);
   --interactive-accent-hover: var(--the-background-color);
-  --interactive-success: #197300;
+  
+  /* Untouch */
+  --text-highlight-bg: rgba(255, 255, 0, 0.4);
+  --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
+  --text-selection: rgba(23, 48, 77, 0.99);
   --scrollbar-active-thumb-bg: rgb(255, 255, 255);
   --scrollbar-bg: rgba(255, 255, 255, 0.05);
   --scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
+  --interactive-success: #197300;
+  --background-modifier-success: #197300;
+  --background-modifier-error: #3d0000;
+  --background-modifier-error-rgb: 61, 0, 0;
+  --background-modifier-error-hover: #470000;
+  --text-error: #ff3333;
+  --text-error-hover: #990000;
   --highlight-mix-blend-mode: lighten;
 }
 
@@ -282,6 +284,9 @@ input[type='number'] {
   position: relative; /* for :after's relative to work! */
   color: var(--the-background-color);
   background-color: var(--the-color);
+}
+.status-bar-item.mod-clickable:hover {
+  color: var(--the-background-color);
 }
 .status-bar-item:not(:first-child) {
   margin-left: calc(5px + 0.5 * var(--status-bar-height));
@@ -345,10 +350,10 @@ body {
 ::-webkit-scrollbar {
   display:none;
 }
-/* Hide search suggestions */
-/* .suggestion-container.mod-search-suggestion {
+/* !(temporarily) Hide search suggestions */
+.suggestion-container.mod-search-suggestion {
   display: none;
-} */
+}
 /* Hide instructions */
 .prompt-instructions {
   display:none;
@@ -364,6 +369,8 @@ body {
 }
 .CodeMirror-line {
   line-height: var(--editor-line-height);
+  text-indent: unset !important; /* important added for hard-coded style */
+  padding-left: 5px !important;
 }
 .cm-s-obsidian {
   line-height: var(--editor-line-height);
@@ -375,14 +382,11 @@ body {
   border-color: var(--the-color);
 }
 
-/* Prompt */
+/* Active Line Prompt */
 .CodeMirror-activeline .CodeMirror-line:before {
   content: var(--input-prompt);
   position: absolute;
   left: -0.5em;
-  font-size: var(--the-font-size);
-  color: var(--the-color);
-  font-family: fira code;
 }
 
 /* Cursor */
@@ -411,6 +415,7 @@ body {
   color: var(--the-color);
   font-size: var(--the-font-size);
   font-style: italic;
+  font-weight: bold;
 }
 
 .cm-s-obsidian span.cm-formatting-highlight,
@@ -422,26 +427,13 @@ body {
 
 /* List */
 .cm-s-obsidian .HyperMD-list-line {
-  text-indent: 0px !important;
-  padding-left: 5px !important; /* important added for hard-coded style */
   padding-top: 0px;
   min-height: unset;
-}
-
-/* Blockquote */
-.cm-s-obsidian .HyperMD-quote {
-  text-indent: 0px !important;
-  padding-left: 5px !important;
-  padding-top: 0px
 }
 
 /* Code block */
 .cm-s-obsidian span.cm-inline-code.cm-hmd-indented-code {
   font-style: normal;
-}
-pre.CodeMirror-line {
-  text-indent: unset !important; /* important added for hard-coded style */
-  padding-left: 5px !important;
 }
 
 .cm-formatting.cm-formatting-code-block,
@@ -449,27 +441,31 @@ pre.CodeMirror-line {
   color: var(--the-color);
   font-size: var(--the-font-size);
   line-height: var(--editor-line-height);
+  font-weight: bold;
 }
 
-/* Footnote */
-.cm-s-obsidian span.cm-footref:not(.cm-formatting-link),
+/* Footnote & Links */
+.cm-s-obsidian span.cm-footref,
+.cm-s-obsidian span.cm-blockid,
+.cm-s-obsidian .HyperMD-footnote span.cm-hmd-barelink {
+  display: inline;
+  vertical-align: unset;
+  margin-top: 0;
+  font-size: var(--the-font-size);
+}
+.cm-s-obsidian span.cm-link.cm-hmd-barelink.cm-footref:not(.cm-formatting-link),
 .cm-s-obsidian span.cm-blockid,
 .cm-s-obsidian .HyperMD-footnote span.cm-hmd-barelink:not(.cm-formatting-link) {
-  font-size: var(--the-font-size);
   font-style: italic;
-  vertical-align: unset;
-  display: inline;
-  margin-top: -0;
   text-decoration: underline;
-}
-.cm-s-obsidian span.cm-link.cm-hmd-barelink:not(.cm-formatting-link) {
-  font-style: italic;
 }
 .cm-s-obsidian .HyperMD-footnote span.cm-hmd-footnote:not(.cm-formatting-link) {
   text-decoration: underline;
 }
+/* .cm-s-obsidian span.cm-link.cm-hmd-barelink:not(.cm-formatting-link) {
+  font-style: normal;
+} */
 .cm-s-obsidian .HyperMD-footnote {
-  padding-left: 5px;
   font-size: var(--the-font-size);
 }
 
@@ -488,12 +484,14 @@ pre.CodeMirror-line {
 /* View header */
 .view-header {
   flex-wrap: nowrap;
-  align-items: baseline;
+  /* align-items: center; */
   border-width: 0;
 }
 .view-header-title {
   font-size: var(--the-font-size);
-  padding-top: 3px;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
 }
 .workspace-split.mod-root > .workspace-leaf:last-of-type .workspace-leaf-content,
 .workspace-split.mod-root > .workspace-leaf:first-of-type .workspace-leaf-content {
@@ -508,9 +506,9 @@ pre.CodeMirror-line {
   padding-right: 0;
   width: calc(4 * var(--char-width));
   min-width: calc(4 * var(--char-width)); /* required for header flex display */
-  height: 37px;
+  height: calc(var(--header-height) + 1px);
   top: -1px;
-  padding-top: 0.25rem !important;
+  /* padding-top: 0.25rem !important; */
   border: 1px solid var(--the-color);
   margin-right: 20px;
   border-right: 10px solid transparent;
@@ -518,13 +516,13 @@ pre.CodeMirror-line {
 .mod-active .view-header-icon:after {
   content: "";
   position: absolute;
-  right: -28px; /* 1/2 * header-height + .view-header-icon(padding-right) */
-  top: -1px;
-  width: 0; 
-  height: 0; 
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent;
-  border-left: 18px solid var(--the-color); 
+  right: calc(-0.5 * var(--header-height) - 10px); /* 1/2 * header-height + .view-header-icon(border-right) */
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-top: calc(0.5 * var(--header-height)) solid transparent;
+  border-bottom: calc(0.5 * var(--header-height)) solid transparent;
+  border-left: calc(0.5 * var(--header-height)) solid var(--the-color); 
 }
 .mod-active .view-header-icon:before {
   content: var(--pwd);
@@ -532,8 +530,11 @@ pre.CodeMirror-line {
   font-weight: bold;
   font-size: var(--the-font-size);
   position: absolute;
-  bottom: 4px;
+  height: var(--header-height);
+  top: 0;
   left: 6px;
+  display: flex;
+  align-items: center;
   /* margin-right: -10px; */
   /* border: 1px solid var(--the-color); */
 }
@@ -543,7 +544,7 @@ pre.CodeMirror-line {
   font-size: 0;
   padding-right: 0;
   width: 3em;
-  padding-top: 0.25rem !important;
+  /* padding-top: 0.25rem !important; */
 }
 
 .view-action[aria-label="Close"],
@@ -551,7 +552,7 @@ pre.CodeMirror-line {
 .view-action[aria-label*="Preview"],
 .view-action[aria-label*="Edit"] {
   color: transparent;
-  width: 1rem;
+  width: calc(0.5 * var(--the-font-size));
 }
 .view-action:before {
   color: var(--the-color);
@@ -581,6 +582,7 @@ a[aria-label="More options"]:before {
 
 /* Prompt */
 .prompt {
+  font-size: var(--the-font-size);
   display: unset;
   /* position: absolute; */
   bottom: var(--status-bar-height);
@@ -591,38 +593,40 @@ a[aria-label="More options"]:before {
   border-style: solid;
   border-width: 1px 0 1px 0;
   border-radius: unset;
-  padding-top: 9px;
-}
-.prompt-results {
-  position: absolute;
-  top: 50px;
-  bottom: 0;
-  right: 10px;
-  left: 10px;
-  /* max-height: 90%; */
-  padding-top: 0;
+  /* padding-top: 9px; */
+  padding: 0px 20px;
 }
 .modal-bg {
   background-color: unset;
 }
 input {
-  font-family: fira code !important;
+  font-family: var(--the-font) !important;
 }
 input.prompt-input {
-  padding: 0 0 0 14px;
-  border-color: transparent;
+  font-size: var(--the-font-size);
+  padding: 0 0 0 5px; /* same as CodeMirror line */
+  border-width: 0;
 }
 .prompt:before {
   content: var(--input-prompt);
   position: absolute;
-  top: 18px;
-  left: 12px;
+  top: calc(20px - 0.5 * var(--editor-line-height) * 1em);
+  left: calc(20px - 0.5em);
+}
+.prompt-results {
+  position: absolute;
+  top: calc(20px + 1em);
+  bottom: 0;
+  right: 20px;
+  left: 10px;
+  /* max-height: 90%; */
+  padding-top: 0;
 }
 .suggestion-item {
+  font-size: var(--the-font-size);
   padding: 0 0 0 15px;
-  border-style: solid;
-  border-color: transparent;
   border-width: 0;
+  height: calc(var(--editor-line-height) * 1em);
 }
 /* .is-selected {
   border-style: solid;
@@ -632,15 +636,20 @@ input.prompt-input {
 .is-selected:not(.community-theme):before {
   content: var(--selected);
   position: absolute;
-  left: 1px;
+  left: calc(-0.5em + 10px); /* 10px = .suggestion-item(border-left) - .CodeMirror-line(border-left) */
   bottom: 1px;
+}
+.suggestion-item:not(.is-selected) > .suggestion-content + .suggestion-flair {
+  height: 1.5em;
+  position: absolute;
+  top: 0;
 }
 .suggestion-item:not(.is-selected) > .suggestion-content + .suggestion-flair:before {
   content: var(--pin-command);
   color: var(--the-color);
-  position: relative;
-  right: 8px;
-  bottom: 6px;
+  position: absolute;
+  left: -0.5em;
+  bottom: 0.01em;
 }
 
 /* Quick Switcher */
@@ -675,6 +684,7 @@ input.prompt-input {
   position: absolute;
   bottom: 0;
   right: 0;
+  font-size: var(--the-font-size);
 }
 /* Position adjustment when window is above */
 .suggestion-container:before {
