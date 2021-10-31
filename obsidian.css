@@ -639,7 +639,8 @@ input.prompt-input {
   left: calc(-0.5em + 10px); /* 10px = .suggestion-item(border-left) - .CodeMirror-line(border-left) */
   bottom: 1px;
 }
-.suggestion-item:not(.is-selected) > .suggestion-content + .suggestion-flair {
+.suggestion-flair {
+  color: transparent;
   height: 1.5em;
   position: absolute;
   top: 0;
@@ -649,19 +650,22 @@ input.prompt-input {
   color: var(--the-color);
   position: absolute;
   left: -0.5em;
-  bottom: 0.01em;
+  bottom: 0.02em;
 }
 
 /* Quick Switcher */
-.suggestion-flair {
-  color: transparent;
-}
 .suggestion-item:not(.is-selected) > .suggestion-flair[aria-label*="Not"]:before {
   content: var(--not-created-note);
   color: var(--the-color);
-  position: relative;
-  right: 8px;
-  bottom: 6px;
+  position: absolute;
+  left: -0.5em;
+  /* bottom: 1em; */
+}
+kbd {
+  font-size: var(--the-font-size);
+}
+.suggestion-hotkey {
+  font-family: var(--the-font);
 }
 
 /* Suggestion (Slash Command/Link suggestion) */
@@ -674,6 +678,7 @@ input.prompt-input {
   border-width: 1px 0 1px 0;
   padding: 0 10px 0 10px;
   margin-top: -5px;
+  box-shadow: none;
 }
 .suggestion {
   max-height: 100%;
@@ -686,10 +691,7 @@ input.prompt-input {
   right: 0;
   font-size: var(--the-font-size);
 }
-/* Position adjustment when window is above */
-.suggestion-container:before {
-  content: attr(top) !important;
-}
+/*TODO Position adjustment when window is above */
 
 /* Setting/Store page */
 .modal.mod-settings,
@@ -1268,6 +1270,7 @@ button.document-search-button:not([aria-label]):before {
   content: "    /\\___/\\\A     `)9 9('\A     {_:Y:.}_\A----( )U-'( )----------\A     ```   '''\A";
   white-space: pre;
 }
+/*TODO Suggestion empty */
 
 /* Notice */
 .notice {
