@@ -273,6 +273,7 @@ input[type='password'],
 input[type='number'] {
   border: solid 1px var(--the-color);
   font-size: var(--the-font-size);
+  font-family: var(--the-font);
 }
 .checkbox-container:after {
   background-color: var(--the-color);
@@ -282,7 +283,7 @@ input[type='number'] {
   font-size: var(--the-font-size);
 }
 
-/* Status bar */
+/* STATUS BAR */
 .status-bar {
   justify-content: flex-start;
   padding-left: 0;
@@ -333,7 +334,7 @@ input[type='number'] {
   background-color: var(--the-color);
 }
 
-/* Hider */
+/* HIDER */
 /* Frameless */
 body {
   padding-top: 0 !important;
@@ -451,6 +452,7 @@ body {
   font-style: normal;
 }
 
+.cm-s-obsidian .HyperMD-codeblock,
 .cm-formatting.cm-formatting-code-block,
 .cm-hmd-codeblock {
   color: var(--the-color);
@@ -496,7 +498,7 @@ body {
 }
 /******************************/
 
-/* View header */
+/* VIEW HEADER */
 .view-header {
   flex-wrap: nowrap;
   /* align-items: center; */
@@ -601,7 +603,7 @@ a[aria-label="More options"]:before {
   content: var(--more);
 }
 
-/* Prompt */
+/* PROMPT WINDOW */
 .prompt {
   font-size: var(--the-font-size);
   display: unset;
@@ -1151,7 +1153,7 @@ sup {
 .frontmatter-container .frontmatter-alias-icon > svg {
   width: 10px !important;
 }
-/***************************** */
+/******************************/
 
 /* Graph View */
 canvas {
