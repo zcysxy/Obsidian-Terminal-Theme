@@ -17,7 +17,7 @@
     * One Color: `#15D00D`
         * Customizable through [mgmeyers' Style Settings](https://github.com/mgmeyers/obsidian-style-settings)!
     * One Font: Fira Code
-    * Three Styles: <b>bold</b>, <em>italic</em>, <u>underline</u>
+    * Two (Major) Styles: **bold**, *italic*
     * Uniform Font Size & Line Height
     * Fancy Cursor
     * Active Line Prompt
@@ -29,22 +29,26 @@
 * Minimal UI
     * *Credit*: [kepano - Hider](https://github.com/kepano/obsidian-hider)
 * Prompts Everywhere
-    * `$` - Active Line
-    * `/` - Find
-    * `:` - Replace
+    <details>
+    <ul><li> `$` - Active Line </li>
+    <li> `/` - Find </li>
+    <li> `:` - Replace </li></ul>
+    </details>
 * ASCII Everywhere
-    * `v` - Fold
-    * `>` - Expand, Selected, Next
-    * `<` - Previous
-    * `+` - Not Created Note
-    * `*` - Pin Command
-    * `+\`/`+/` - Show More
-    * `x` - Close
-    * `/q` - Quit
-    * `/p`/`/e` - Preview/Edit Mode
-    * `/?` - More Options
-    * `PWD` - Present Working Document
-    * `-a` - Apply to All
+    <details> 
+    <ul><li> `v` - Fold </li>
+    <li> `>` - Expand, Selected, Next </li>
+    <li> `<` - Previous </li>
+    <li> `+` - Not Created Note </li>
+    <li> `*` - Pin Command </li>
+    <li> `+\`/`+/` - Show More </li>
+    <li> `x` - Close </li>
+    <li> `/q` - Quit </li>
+    <li> `/p`/`/e` - Preview/Edit Mode </li>
+    <li> `/?` - More Options </li>
+    <li> `PWD` - Present Working Document </li>
+    <li> `-a` - Apply to All </li></ul>
+    </details>
 * **Easter Eggs**: There are several lovely creatures accompanying you in the terminal (OuO), go find them!
 
 ## Screenshots
@@ -52,6 +56,7 @@
 ![editor](screenshots/editor.png)
 
 ---
+
 ![quick-switcher](screenshots/quick-switcher.png)
 
 ---
@@ -61,7 +66,6 @@
 ---
 
 ![panes](screenshots/panes.png)
-
 
 ## Current Limitations
 
