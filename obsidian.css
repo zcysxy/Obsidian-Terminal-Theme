@@ -286,12 +286,52 @@ input[type='number'] {
 /* STATUS BAR */
 .status-bar {
   justify-content: flex-start;
-  padding-left: 0;
-  margin-left: -5px;
+  padding-left: 0px;
+  margin-left: 35px; /* -5px */
   line-height: var(--status-bar-height);
   border-top: 1px solid var(--the-color);
   /* margin-top: -1px; */
   max-height: var(--status-bar-height);
+}
+/* Settings icon */
+.workspace-ribbon.mod-left .side-dock-ribbon-action[aria-label="Settings"]:before {
+  content: "\2699";
+  background-color: var(--the-color);
+  color: var(--the-background-color);
+  font-weight: bold;
+  font-size: 1em;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 20px;
+}
+.workspace-ribbon.mod-left .side-dock-ribbon-action[aria-label="Settings"]:after {
+  /* background-color: var(--the-color); */
+  content: "";
+  position: fixed;
+  height: 0;
+  width: 0;
+  bottom: 0;
+  left: 20px;
+  border-top: calc(0.5 * var(--status-bar-height) - 0.5px) solid transparent;
+  border-bottom: calc(0.5 * var(--status-bar-height) + 0.5px) solid transparent;
+  border-left: calc(0.5 * var(--status-bar-height)) solid var(--the-color);
+}
+.workspace-ribbon.mod-left .side-dock-settings:before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  bottom: 0px;
+  width: 0;
+  height: 0;
+  border-top: calc(0.5 * var(--status-bar-height) - 0.5px) solid transparent;
+  border-bottom: calc(0.5 * var(--status-bar-height) + 0.5px) solid transparent;
+  border-left: calc(0.5 * var(--status-bar-height)) solid var(--the-background-color);
+  background-color: var(--the-color);
+}
+.tooltip.mod-right {
+  bottom: 0 !important;
+  top: unset !important;
 }
 .status-bar-item {
   padding-right: 5px;
@@ -342,7 +382,9 @@ body {
 /* Hide ribbon */
 .workspace-ribbon.mod-left,
 .workspace-ribbon.mod-right {
-  display:none;
+  /* display: none; */
+  flex-basis: 0px;
+  border-width: 0px;
 }
 .workspace-split.mod-right-split,
 .workspace-split.mod-left-split {

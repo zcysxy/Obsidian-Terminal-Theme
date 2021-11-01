@@ -30,21 +30,21 @@
     * *Credit*: [kepano - Hider](https://github.com/kepano/obsidian-hider)
 * Prompts Everywhere
     <details>
-    <ul><li> `$` - Active Line </li>
-    <li> `/` - Find </li>
-    <li> `:` - Replace </li></ul>
+    <ul><li> <code>$</code> - Active Line </li>
+    <li> <code>/</code> - Find </li>
+    <li> <code>:</code> - Replace </li></ul>
     </details>
 * ASCII Everywhere
     <details> 
-    <ul><li> `v` - Fold </li>
-    <li> `>` - Expand, Selected, Next </li>
-    <li> `<` - Previous </li>
-    <li> `+` - Not Created Note </li>
-    <li> `*` - Pin Command </li>
-    <li> `+\`/`+/` - Show More </li>
-    <li> `x` - Close </li>
+    <ul><li> <code>v</code> - Fold </li>
+    <li> <code>></code> - Expand, Selected, Next </li>
+    <li> <code><</code> - Previous </li>
+    <li> <code>+</code> - Not Created Note </li>
+    <li> <code>*</code> - Pin Command </li>
+    <li> `+\<code>/</code>+/` - Show More </li>
+    <li> <code>x</code> - Close </li>
     <li> `/q` - Quit </li>
-    <li> `/p`/`/e` - Preview/Edit Mode </li>
+    <li> `/p<code>/</code>/e` - Preview/Edit Mode </li>
     <li> `/?` - More Options </li>
     <li> `PWD` - Present Working Document </li>
     <li> `-a` - Apply to All </li></ul>
