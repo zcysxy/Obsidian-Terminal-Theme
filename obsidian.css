@@ -1368,7 +1368,7 @@ button.document-search-button:not([aria-label]):before {
 
 /* Empty State */
 .empty-state-container:after {
-  content: "------------------------------\A                     \\   ^__^\A                      \\  (oo)\\_______\A                         (__)\\        )\\/\\\A                             ||----w |\A                             ||     ||";
+  content: "---------------------------------\A                     \\   ^__^\A                      \\  (oo)\\_______\A                         (__)\\        )\\/\\\A                             ||----w |\A                             ||     ||";
   white-space: pre;
 }
 .empty-state-title {
