@@ -1401,11 +1401,7 @@ div.search-empty-state:before {
   white-space: pre;
   font-style: italic;
   letter-spacing: -3px;
-  /* float: left; */
 }
-/*TODO
-* Embed/preview
-*/
 
 
 /* Notice */
