@@ -304,6 +304,10 @@ input[type='number'] {
   left: 0px;
   bottom: 0px;
   width: 20px;
+  height: var(--status-bar-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .workspace-ribbon.mod-left .side-dock-ribbon-action[aria-label="Settings"]:after {
   /* background-color: var(--the-color); */
@@ -1201,6 +1205,14 @@ sup {
 canvas {
   border-top: 1px solid var(--the-color) !important;
 }
+.theme-dark .graph-view.color-fill-tag,
+.theme-dark .graph-view.color-fill-attachment {
+  color: var(--the-color);
+  opacity: 0.6;
+}
+.graph-view.color-fill-focused {
+  color: var(--the-color);
+}
 
 /* Search result matched color */
 .search-result-file-matched-text,
@@ -1377,6 +1389,45 @@ button.document-search-button:not([aria-label]):before {
 .notice {
   border: 1px solid var(--the-color);
 }
+
+/* TABS */
+/* .plugin-tabs .mod-root.workspace-split.mod-vertical div.workspace-split.mod-vertical > div.workspace-leaf.stayopen,
+.plugin-tabs div.mod-root.workspace-split.mod-vertical > div.workspace-leaf.stayopen,
+.plugin-tabs .mod-root.workspace-split.mod-vertical div.workspace-split.mod-vertical > div.workspace-leaf.mod-active,
+.plugin-tabs div.mod-root.workspace-split.mod-vertical > div.workspace-leaf.mod-active {
+  height: var(--headerheight);
+  min-height: unset;
+  top: 0;
+  min-width: var(--w1);
+  max-width: var(--w2);
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-self: unset;
+  position: unset;
+  contain: unset;
+  display: unset;
+}
+.plugin-tabs .workspace-leaf.mod-active.stayopen .workspace-leaf-content {
+  contain: unset !important;
+  position: absolute !important;
+  display: unset !important;
+}
+.plugin-tabs .workspace-leaf.mod-active.stayopen .workspace-leaf-content .view-content {
+  position: absolute;
+  align-self: stretch;
+  bottom: 0;
+  left: 0;
+  order: 99;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: calc(100% - var(--headerheight) * var(--rows));
+  overflow-y: hidden;
+  padding-right: 1px;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+} */
 
 /* TEST FILED */
 /* Fix dettached PWD */

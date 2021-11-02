@@ -4,4 +4,4 @@
 
 ### New
 
-* Settings icon in the statusbar.
+* Settings icon in the status bar.
