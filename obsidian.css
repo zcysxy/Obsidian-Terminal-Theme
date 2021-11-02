@@ -1355,15 +1355,16 @@ button.document-search-button:not([aria-label]):before {
   top: unset;
 }
 .document-replace-buttons {
-  margin-right: 20px;
+  margin-right: 18px;
 }
 
 /* Global search close button */
 .search-input-clear-button:before {
   content: var(--close);
   font-size: var(--the-font-size);
-  position: absolute;
-  bottom: -22px;
+  position: relative;
+  bottom: 2px;
+  right: -12px;
 }
 
 /* Empty State */
@@ -1383,17 +1384,32 @@ button.document-search-button:not([aria-label]):before {
   content: "    /\\___/\\\A     `)9 9('\A     {_:Y:.}_\A----( )U-'( )----------\A     ```   '''\A";
   white-space: pre;
 }
-.suggestion-empty:before {
+.suggestion-empty {
+  font-size: var(--the-font-size);
+  /* line-height: calc(0.8 * var(--editor-line-height));
+  width: fit-content; */
+}
+/* .suggestion-empty:before {
   content: '(\\ /)\A( . .)\A c(")(")\A';
   white-space: pre;
   font-style: italic;
-  position: absolute;
-  left: 0em;
+  letter-spacing: -2px;
+  float: left;
+} */
+div.search-empty-state {
+  font-size: var(--the-font-size);
+  line-height: calc(0.8 * var(--editor-line-height));
+}
+div.search-empty-state:before {
+  content: '        (\\ /)\A        ( . .)\A        c(")(")\A';
+  white-space: pre;
+  font-style: italic;
+  letter-spacing: -3px;
+  /* float: left; */
 }
 /*TODO
 * Suggestion empty
 * Embed/preview
-* Search
 */
 
 
