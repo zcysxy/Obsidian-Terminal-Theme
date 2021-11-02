@@ -660,7 +660,7 @@ a[aria-label="More options"]:before {
   max-width: unset;
   max-height: 50%;
   border-style: solid;
-  border-width: 1px 0 1px 0;
+  border-width: 1px 0 0px 0;
   border-radius: unset;
   /* padding-top: 9px; */
   padding: 0px 20px;
@@ -1383,7 +1383,19 @@ button.document-search-button:not([aria-label]):before {
   content: "    /\\___/\\\A     `)9 9('\A     {_:Y:.}_\A----( )U-'( )----------\A     ```   '''\A";
   white-space: pre;
 }
-/*TODO Suggestion empty */
+.suggestion-empty:before {
+  content: '(\\ /)\A( . .)\A c(")(")\A';
+  white-space: pre;
+  font-style: italic;
+  position: absolute;
+  left: 0em;
+}
+/*TODO
+* Suggestion empty
+* Embed/preview
+* Search
+*/
+
 
 /* Notice */
 .notice {
