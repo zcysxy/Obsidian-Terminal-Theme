@@ -1389,6 +1389,9 @@ button.document-search-button:not([aria-label]):before {
 .notice {
   border: 1px solid var(--the-color);
 }
+.modal:not(.mod-settings):not(.mod-community-plugin):not(.mod-community-theme) {
+  border: 1px solid var(--the-color);
+}
 
 /* TABS */
 /* .plugin-tabs .mod-root.workspace-split.mod-vertical div.workspace-split.mod-vertical > div.workspace-leaf.stayopen,
