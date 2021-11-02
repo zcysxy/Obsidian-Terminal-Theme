@@ -1386,16 +1386,12 @@ button.document-search-button:not([aria-label]):before {
 }
 .suggestion-empty {
   font-size: var(--the-font-size);
-  /* line-height: calc(0.8 * var(--editor-line-height));
-  width: fit-content; */
+  line-height: calc(0.8 * var(--editor-line-height));
 }
-/* .suggestion-empty:before {
-  content: '(\\ /)\A( . .)\A c(")(")\A';
+.suggestion-empty:before {
+  content: ' _      _      _\A __(.)< __(.)> __(.)=\A \\___)  \\___)  \\___) \A';
   white-space: pre;
-  font-style: italic;
-  letter-spacing: -2px;
-  float: left;
-} */
+}
 div.search-empty-state {
   font-size: var(--the-font-size);
   line-height: calc(0.8 * var(--editor-line-height));
@@ -1408,7 +1404,6 @@ div.search-empty-state:before {
   /* float: left; */
 }
 /*TODO
-* Suggestion empty
 * Embed/preview
 */
 
