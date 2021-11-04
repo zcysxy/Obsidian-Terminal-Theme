@@ -549,6 +549,9 @@ body {
   flex-wrap: nowrap;
   /* align-items: center; */
 }
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
+  border-bottom: 1px solid var(--text-accent);
+}
 .workspace-leaf.mod-active .view-header {
 border-width: 0 0 1px 0;
 border-color: var(--text-accent);
