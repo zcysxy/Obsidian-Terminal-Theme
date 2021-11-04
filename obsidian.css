@@ -1419,7 +1419,7 @@ div.search-empty-state:before {
 }
 
 /* TOGGLE */
-.checkbox-container,
+/* .checkbox-container,
 .checkbox-container:after {
   border: none;
   box-shadow: none;
@@ -1437,14 +1437,12 @@ div.search-empty-state:before {
 }
 .checkbox-container:not(.is-enabled):before {
   content: "____\A     O___)";
-  /* content: " ___ \A|_X_|\A"; */
 }
 .checkbox-container.is-enabled:before {
   content: "____\A    (###O";
-  /* content: " ___ \A|_V_|\A"; */
-}
+} */
 /* BUTTON */
-button {
+/* button {
   border: none;
 }
 button:before, button:after,
@@ -1462,7 +1460,7 @@ button:focus:before {
 }
 button:focus:after {
   content: "<"
-}
+} */
 
 /* TABS */
 /* .plugin-tabs .mod-root.workspace-split.mod-vertical div.workspace-split.mod-vertical > div.workspace-leaf.stayopen,
