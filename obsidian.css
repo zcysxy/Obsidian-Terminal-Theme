@@ -187,7 +187,7 @@ settings:
   --the-background-color: #000000;
   --the-font: Fira Code;
   --the-font-size: 14px;
-  --editor-line-height: 1.5;
+  --editor-line-height: 1.3;
   --char-width: calc(0.625 * var(--the-font-size)); /* the ratio is determined by the font-family */
 
   --default-font: var(--the-font);
@@ -438,10 +438,10 @@ body {
   line-height: var(--editor-line-height);
   font-size: var(--the-font-size);
   font-family: var(--the-font);
-  /* top border */
-  border-style: solid;
+  /* ~~top border~~ ! move to .view-header */
+  /* border-style: solid;
   border-width: 1px 0px 0px 0px;
-  border-color: var(--the-color);
+  border-color: var(--the-color); */
 }
 
 /* Active Line Prompt */
@@ -548,7 +548,10 @@ body {
 .view-header {
   flex-wrap: nowrap;
   /* align-items: center; */
-  border-width: 0;
+}
+.workspace-leaf.mod-active .view-header {
+border-width: 0 0 1px 0;
+border-color: var(--text-accent);
 }
 .view-header-title {
   font-size: var(--the-font-size);
@@ -1410,6 +1413,52 @@ div.search-empty-state:before {
 }
 .modal:not(.mod-settings):not(.mod-community-plugin):not(.mod-community-theme) {
   border: 1px solid var(--the-color);
+}
+
+/* TOGGLE */
+.checkbox-container,
+.checkbox-container:after {
+  border: none;
+  box-shadow: none;
+  color: transparent;
+  background-color: transparent;
+}
+.checkbox-container:before {
+  white-space: pre;
+  color: var(--the-color);
+  opacity: 1;
+  position: absolute;
+  top: -11px;
+  left: -31px;
+  font-weight: bold;
+}
+.checkbox-container:not(.is-enabled):before {
+  content: "____\A     O___)";
+  /* content: " ___ \A|_X_|\A"; */
+}
+.checkbox-container.is-enabled:before {
+  content: "____\A    (###O";
+  /* content: " ___ \A|_V_|\A"; */
+}
+/* BUTTON */
+button {
+  border: none;
+}
+button:before, button:after,
+button:focus:before, button:focus:after {
+  font-weight: bold;
+}
+button:before {
+  content: "[";
+}
+button:after {
+  content: "]"
+}
+button:focus:before {
+  content: ">"
+}
+button:focus:after {
+  content: "<"
 }
 
 /* TABS */
