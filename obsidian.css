@@ -715,6 +715,17 @@ input.prompt-input {
   bottom: 1px;
 }
 .suggestion-flair {
+  left: -1px;
+  top: 0;
+  height: calc(var(--the-font-size) * var(--editor-line-height));
+  display: flex;
+  align-items: center;
+}
+.is-selected .suggestion-flair {
+  display: none;
+}
+/*
+.suggestion-flair {
   color: transparent;
   height: 1.5em;
   position: absolute;
@@ -726,16 +737,21 @@ input.prompt-input {
   position: absolute;
   left: -0.5em;
   bottom: 0.02em;
-}
+} */
 
 /* Quick Switcher */
-.suggestion-item:not(.is-selected) > .suggestion-flair[aria-label*="Not"]:before {
+/* .suggestion-item:not(.is-selected) > .suggestion-flair[aria-label*="Not"]:before {
   content: var(--not-created-note);
   color: var(--the-color);
   position: absolute;
   left: -0.5em;
-  /* bottom: 1em; */
+  bottom: 1em;
+} */
+.suggestion-item:not(.is-selected) > .suggestion-flair[aria-label*="Not"],
+.suggestion-item:not(.is-selected) > .suggestion-flair[aria-label*="Alias"] {
+  left: -2px;
 }
+
 kbd {
   font-size: var(--the-font-size);
 }
@@ -986,17 +1002,20 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 /* Not created files */
+/* div[aria-label*="Not created"] {
+  position: relative;
+}
 div[aria-label*="Not created"]:before {
   content: var(--not-created-note);
   color: var(--the-color);
-  position: relative;
-  right: 8px;
-  bottom: 1px;
+  position: absolute;
+  left: 9px; \approx padding 6px + ori-half-width 6px - new-half-width 4.3px
+  bottom: 3px;
   font-weight: bold;
 }
 div[aria-label*="Not created"] svg {
-  width: 0;
-}
+  color: transparent;
+} */
 /********************************************/
 
 /* Workspace (Center Panes) */
@@ -1527,3 +1546,32 @@ button:focus:after {
   border-color: var(--the-color);
   z-index: 9999;
 } */
+
+/* Icons */
+svg.heading-glyph {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><text x='25%' y='90%' style='font-weight:bold;font-family:fira code;font-size:16px;'>H</text></svg>");
+  background-color: var(--the-color);
+  text-align: center;
+}
+svg.link-glyph {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><text x='25%' y='90%' style='font-weight:bold;font-family:fira code'>&amp;</text></svg>");
+  background-color: var(--the-color);
+}
+svg.add-note-glyph {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><text x='25%' y='80%' style='font-weight:bold;font-family:fira code'>+</text></svg>");
+  background-color: var(--the-color);
+}
+svg.filled-pin {
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><text x='25%' y='90%' style='font-weight:bold;font-family:fira code'>*</text></svg>");
+  background-color: var(--the-color);
+}
+.suggestion-flair[aria-label="Alias"] svg.forward-arrow {
+  width: unset;
+  height: unset;
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><text x='30%' y='70%' style='font-weight:bold;font-family:fira code;font-size:14px;'>@</text></svg>");
+  background-color: var(--the-color);
+}
+
+.cm-tag.cm-overlay.cm-spell-error{
+  background-image: none;
+}

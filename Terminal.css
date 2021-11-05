@@ -187,7 +187,7 @@ settings:
   --the-background-color: #000000;
   --the-font: Fira Code;
   --the-font-size: 14px;
-  --editor-line-height: 1.5;
+  --editor-line-height: 1.3;
   --char-width: calc(0.625 * var(--the-font-size)); /* the ratio is determined by the font-family */
 
   --default-font: var(--the-font);
@@ -304,6 +304,10 @@ input[type='number'] {
   left: 0px;
   bottom: 0px;
   width: 20px;
+  height: var(--status-bar-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .workspace-ribbon.mod-left .side-dock-ribbon-action[aria-label="Settings"]:after {
   /* background-color: var(--the-color); */
@@ -434,10 +438,10 @@ body {
   line-height: var(--editor-line-height);
   font-size: var(--the-font-size);
   font-family: var(--the-font);
-  /* top border */
-  border-style: solid;
+  /* ~~top border~~ ! move to .view-header */
+  /* border-style: solid;
   border-width: 1px 0px 0px 0px;
-  border-color: var(--the-color);
+  border-color: var(--the-color); */
 }
 
 /* Active Line Prompt */
@@ -544,7 +548,13 @@ body {
 .view-header {
   flex-wrap: nowrap;
   /* align-items: center; */
-  border-width: 0;
+}
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
+  border-bottom: 1px solid var(--text-accent);
+}
+.workspace-leaf.mod-active .view-header {
+border-width: 0 0 1px 0;
+border-color: var(--text-accent);
 }
 .view-header-title {
   font-size: var(--the-font-size);
@@ -656,7 +666,7 @@ a[aria-label="More options"]:before {
   max-width: unset;
   max-height: 50%;
   border-style: solid;
-  border-width: 1px 0 1px 0;
+  border-width: 1px 0 0px 0;
   border-radius: unset;
   /* padding-top: 9px; */
   padding: 0px 20px;
@@ -1201,6 +1211,14 @@ sup {
 canvas {
   border-top: 1px solid var(--the-color) !important;
 }
+.theme-dark .graph-view.color-fill-tag,
+.theme-dark .graph-view.color-fill-attachment {
+  color: var(--the-color);
+  opacity: 0.6;
+}
+.graph-view.color-fill-focused {
+  color: var(--the-color);
+}
 
 /* Search result matched color */
 .search-result-file-matched-text,
@@ -1343,20 +1361,21 @@ button.document-search-button:not([aria-label]):before {
   top: unset;
 }
 .document-replace-buttons {
-  margin-right: 20px;
+  margin-right: 18px;
 }
 
 /* Global search close button */
 .search-input-clear-button:before {
   content: var(--close);
   font-size: var(--the-font-size);
-  position: absolute;
-  bottom: -22px;
+  position: relative;
+  bottom: 2px;
+  right: -12px;
 }
 
 /* Empty State */
 .empty-state-container:after {
-  content: "------------------------------\A                     \\   ^__^\A                      \\  (oo)\\_______\A                         (__)\\        )\\/\\\A                             ||----w |\A                             ||     ||";
+  content: "---------------------------------\A                     \\   ^__^\A                      \\  (oo)\\_______\A                         (__)\\        )\\/\\\A                             ||----w |\A                             ||     ||";
   white-space: pre;
 }
 .empty-state-title {
@@ -1371,12 +1390,116 @@ button.document-search-button:not([aria-label]):before {
   content: "    /\\___/\\\A     `)9 9('\A     {_:Y:.}_\A----( )U-'( )----------\A     ```   '''\A";
   white-space: pre;
 }
-/*TODO Suggestion empty */
+.suggestion-empty {
+  font-size: var(--the-font-size);
+  line-height: calc(0.8 * var(--editor-line-height));
+}
+.suggestion-empty:before {
+  content: ' _      _      _\A __(.)< __(.)> __(.)=\A \\___)  \\___)  \\___) \A';
+  white-space: pre;
+}
+div.search-empty-state {
+  font-size: var(--the-font-size);
+  line-height: calc(0.8 * var(--editor-line-height));
+}
+div.search-empty-state:before {
+  content: '        (\\ /)\A        ( . .)\A        c(")(")\A';
+  white-space: pre;
+  font-style: italic;
+  letter-spacing: -3px;
+}
+
 
 /* Notice */
 .notice {
   border: 1px solid var(--the-color);
 }
+.modal:not(.mod-settings):not(.mod-community-plugin):not(.mod-community-theme) {
+  border: 1px solid var(--the-color);
+}
+
+/* TOGGLE */
+/* .checkbox-container,
+.checkbox-container:after {
+  border: none;
+  box-shadow: none;
+  color: transparent;
+  background-color: transparent;
+}
+.checkbox-container:before {
+  white-space: pre;
+  color: var(--the-color);
+  opacity: 1;
+  position: absolute;
+  top: -11px;
+  left: -31px;
+  font-weight: bold;
+}
+.checkbox-container:not(.is-enabled):before {
+  content: "____\A     O___)";
+}
+.checkbox-container.is-enabled:before {
+  content: "____\A    (###O";
+} */
+/* BUTTON */
+/* button {
+  border: none;
+}
+button:before, button:after,
+button:focus:before, button:focus:after {
+  font-weight: bold;
+}
+button:before {
+  content: "[";
+}
+button:after {
+  content: "]"
+}
+button:focus:before {
+  content: ">"
+}
+button:focus:after {
+  content: "<"
+} */
+
+/* TABS */
+/* .plugin-tabs .mod-root.workspace-split.mod-vertical div.workspace-split.mod-vertical > div.workspace-leaf.stayopen,
+.plugin-tabs div.mod-root.workspace-split.mod-vertical > div.workspace-leaf.stayopen,
+.plugin-tabs .mod-root.workspace-split.mod-vertical div.workspace-split.mod-vertical > div.workspace-leaf.mod-active,
+.plugin-tabs div.mod-root.workspace-split.mod-vertical > div.workspace-leaf.mod-active {
+  height: var(--headerheight);
+  min-height: unset;
+  top: 0;
+  min-width: var(--w1);
+  max-width: var(--w2);
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-self: unset;
+  position: unset;
+  contain: unset;
+  display: unset;
+}
+.plugin-tabs .workspace-leaf.mod-active.stayopen .workspace-leaf-content {
+  contain: unset !important;
+  position: absolute !important;
+  display: unset !important;
+}
+.plugin-tabs .workspace-leaf.mod-active.stayopen .workspace-leaf-content .view-content {
+  position: absolute;
+  align-self: stretch;
+  bottom: 0;
+  left: 0;
+  order: 99;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: calc(100% - var(--headerheight) * var(--rows));
+  overflow-y: hidden;
+  padding-right: 1px;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+} */
 
 /* TEST FILED */
 /* Fix dettached PWD */
