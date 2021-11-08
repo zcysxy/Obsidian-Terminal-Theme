@@ -926,7 +926,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 /* Active tab */
 .workspace-tab-header-container {
-  padding-top: 2px;
+  padding-top: 1px;
   height: 36.7px; /* should be 36px, but ...*/
   border-bottom: 1px solid var(--the-color);
 }
