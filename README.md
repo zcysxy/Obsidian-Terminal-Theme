@@ -41,13 +41,13 @@
     <li> <code><</code> - Previous </li>
     <li> <code>+</code> - Not Created Note </li>
     <li> <code>*</code> - Pin Command </li>
-    <li> `+\<code>/</code>+/` - Show More </li>
+    <li> <code>+\</code>/<code>+/</code> - Show More </li>
     <li> <code>x</code> - Close </li>
-    <li> `/q` - Quit </li>
-    <li> `/p<code>/</code>/e` - Preview/Edit Mode </li>
-    <li> `/?` - More Options </li>
-    <li> `PWD` - Present Working Document </li>
-    <li> `-a` - Apply to All </li></ul>
+    <li> <code>/q</code> - Quit </li>
+    <li> <code>/p</code>/<code>/e</code> - Preview/Edit Mode </li>
+    <li> <code>/?</code> - More Options </li>
+    <li> <code>PWD</code> - Present Working Document </li>
+    <li> <code>-a</code> - Apply to All </li></ul>
     </details>
 * **Easter Eggs**: There are several lovely creatures accompanying you in the terminal (OuO), go find them!
 
