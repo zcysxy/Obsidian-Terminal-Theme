@@ -1,3 +1,6 @@
+‼️ If you don't see the gear icon ⚙️ for Settings, use `Ctrl/Cmd` + `,` to open the Settings panel ‼️
+
+
 # Obsidian Terminal Theme
 
 > An [Obsidian](https://obsidian.md) theme that *emulates* a terminal.
