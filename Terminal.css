@@ -285,97 +285,34 @@ input[type='number'] {
 
 /* STATUS BAR */
 .status-bar {
+  --status-bar-position: relative;
+  --status-bar-radius: 0;
   justify-content: flex-start;
-  padding-left: 0px;
-  margin-left: 35px; /* -5px */
-  line-height: var(--status-bar-height);
-  border-top: 1px solid var(--the-color);
-  /* margin-top: -1px; */
-  max-height: var(--status-bar-height);
+  gap: 0px;
+  padding: 0;
 }
-/* Settings icon */
-.workspace-ribbon.mod-left .side-dock-ribbon-action[aria-label="Settings"]:before {
-  content: "\2699";
-  background-color: var(--the-color);
-  color: var(--the-background-color);
-  font-weight: bold;
-  font-size: 1em;
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  width: 20px;
-  height: var(--status-bar-height);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.status-bar > div.status-bar-item {
+  border-radius: 0;
+  padding: 0;
+  padding-left: 5px;
 }
-.workspace-ribbon.mod-left .side-dock-ribbon-action[aria-label="Settings"]:after {
-  /* background-color: var(--the-color); */
-  content: "";
-  position: fixed;
-  height: 0;
-  width: 0;
-  bottom: 0;
-  left: 20px;
-  border-top: calc(0.5 * var(--status-bar-height) - 0.5px) solid transparent;
-  border-bottom: calc(0.5 * var(--status-bar-height) + 0.5px) solid transparent;
-  border-left: calc(0.5 * var(--status-bar-height)) solid var(--the-color);
+.status-bar > div.status-bar-item:nth-last-child(odd) {
+  --status-bar-text-color: var(--the-background-color);
+  --status-bar-background: var(--the-color);
+  color: var(--status-bar-text-color);
+  background-color: var(--status-bar-background);
+  border-radius: 0;
 }
-.workspace-ribbon.mod-left .side-dock-settings:before {
-  content: "";
-  position: absolute;
-  left: 25px;
-  bottom: 0px;
-  width: 0;
-  height: 0;
-  border-top: calc(0.5 * var(--status-bar-height) - 0.5px) solid transparent;
-  border-bottom: calc(0.5 * var(--status-bar-height) + 0.5px) solid transparent;
-  border-left: calc(0.5 * var(--status-bar-height)) solid var(--the-background-color);
-  background-color: var(--the-color);
-}
-.tooltip.mod-right {
-  bottom: 0 !important;
-  top: unset !important;
-}
-.status-bar-item {
-  padding-right: 5px;
-  padding-left: 10px;
-  /* display: block; */
-  position: relative; /* for :after's relative to work! */
-  color: var(--the-background-color);
-  background-color: var(--the-color);
-}
-.status-bar-item.mod-clickable:hover {
-  color: var(--the-background-color);
-}
-.status-bar-item:not(:first-child) {
-  margin-left: calc(5px + 0.5 * var(--status-bar-height));
-}
-.status-bar-item svg {
-  fill: var(--the-background-color) !important;
+.status-bar > div.status-bar-item:nth-last-child(even) {
+  --status-bar-text-color: var(--the-color);
+  --status-bar-background: var(--the-background-color);
 }
 .status-bar > .status-bar-item:after {
   content: "";
-  position: absolute;
-  right: calc(-0.5 * var(--status-bar-height));
-  bottom: 0px;
-  width: 0;
-  height: 0;
-  border-top: calc(0.5 * var(--status-bar-height)) solid transparent;
-  border-bottom: calc(0.5 * var(--status-bar-height)) solid transparent;
-  border-left: calc(0.5 * var(--status-bar-height)) solid var(--the-color);
-}
-.status-bar > .status-bar-item:not(:last-child):before {
-  content: "";
-  position: absolute;
-  right: -16px;
-  bottom: 0px;
-  width: 0;
-  height: 0;
-  border-top: calc(0.5 * var(--status-bar-height) - 1px) solid transparent;
-  border-bottom: calc(0.5 * var(--status-bar-height)) solid transparent;
-  border-left: calc(0.5 * var(--status-bar-height)) solid var(--the-background-color);
-  background-color: var(--the-color);
+  border-top: calc(0.5 * var(--status-bar-height)) solid var(--status-bar-text-color);
+  border-bottom: calc(0.5 * var(--status-bar-height)) solid var(--status-bar-text-color);
+  border-left: calc(0.5 * var(--status-bar-height)) solid transparent;
+  margin-left: 5px;
 }
 
 /* HIDER */
