@@ -287,17 +287,18 @@ input[type='number'] {
 .workspace-tab-header-spacer {
   display: none;
 }
-.workspace-tab-header-container {
+/* .workspace-tab-header-container {
   justify-content: center;
-}
-.workspace-tab-header-container-inner {
+} */
+.mod-root .workspace-tab-header-container-inner {
   margin: 0;
-  width: 100%;
+  /* width: 100%; */
   justify-content: center;
+  padding-top: 0;
 }
 
 .workspace .mod-root .workspace-tab-header:only-child {
-  width: 300%;
+  /* width: 300%; */
   max-width: unset;
   background-color: transparent;
   box-shadow: none;
@@ -315,6 +316,9 @@ input[type='number'] {
 .mod-root .workspace-tab-header-tab-list {
   display: none;
 }
+.workspace .mod-root .workspace-tab-header-inner:after {
+  display: none;
+}
 
 .workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button {
   left: 0px;
@@ -326,6 +330,7 @@ input[type='number'] {
 }
 .workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button:before {
   content: "X";
+  padding-left: 5px;
 }
 .workspace .mod-root .workspace-tab-header.mod-active .workspace-tab-header-inner-close-button:before {
   content: ">";
@@ -334,11 +339,10 @@ input[type='number'] {
 
 .workspace .mod-root .workspace-tab-header {
   box-shadow: none;
-  padding-left: 15px;
+  padding-left: 20px;
   border-radius: 0;
-}
-.workspace .mod-root .workspace-tab-header:not(:first-child) {
-  border-left: 1px solid var(--the-color);
+  border-right: 1px solid var(--the-color);
+  padding-top: 0;
 }
 
 /* STATUS BAR */
