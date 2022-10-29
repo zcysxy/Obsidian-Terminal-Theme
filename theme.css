@@ -353,6 +353,7 @@ input[type='number'] {
   gap: 0px;
   padding: 0;
   border-left: none;
+  border-top: 1px solid var(--the-color);
 }
 .status-bar > div.status-bar-item {
   border-radius: 0;
