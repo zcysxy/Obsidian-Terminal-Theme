@@ -380,6 +380,28 @@ input[type='number'] {
   margin-left: 5px;
 }
 
+/* Settings Icon */
+.workspace-ribbon.mod-left .side-dock-ribbon-action[aria-label="Settings"]:before {
+  content: "\2699";
+  font-weight: bold;
+  font-size: 1em;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 20px;
+  height: var(--status-bar-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--icon-color-hover);
+}
+.workspace-ribbon.mod-left .side-dock-ribbon-action[aria-label="Settings"] {
+  opacity: 1;
+}
+.status-bar {
+  margin-left: 20px;
+}
+
 /* HIDER */
 /* Frameless */
 body {
