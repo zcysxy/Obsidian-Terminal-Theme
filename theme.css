@@ -305,9 +305,9 @@ input[type='number'] {
   align-items: center;
   border-left: none;
 }
-.workspace-tab-header:only-child .workspace-tab-header-inner-close-button {
+/* .workspace-tab-header:only-child .workspace-tab-header-inner-close-button {
   display: none;
-}
+} */
 .workspace-tab-header:before,
 .workspace-tab-header:after {
   display: none;
