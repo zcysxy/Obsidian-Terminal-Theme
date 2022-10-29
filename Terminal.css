@@ -283,6 +283,64 @@ input[type='number'] {
   font-size: var(--the-font-size);
 }
 
+/* Tabs */
+.workspace-tab-header-spacer {
+  display: none;
+}
+.workspace-tab-header-container {
+  justify-content: center;
+}
+.workspace-tab-header-container-inner {
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+}
+
+.workspace .mod-root .workspace-tab-header:only-child {
+  width: 300%;
+  max-width: unset;
+  background-color: transparent;
+  box-shadow: none;
+  align-items: center;
+  border-left: none;
+}
+.workspace-tab-header:only-child .workspace-tab-header-inner-close-button {
+  display: none;
+}
+.workspace-tab-header:before,
+.workspace-tab-header:after {
+  display: none;
+}
+.mod-root .workspace-tab-header-new-tab,
+.mod-root .workspace-tab-header-tab-list {
+  display: none;
+}
+
+.workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button {
+  left: 0px;
+  position: absolute;
+  right: unset
+}
+.workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button svg {
+  display: none;
+}
+.workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button:before {
+  content: "X";
+}
+.workspace .mod-root .workspace-tab-header.mod-active .workspace-tab-header-inner-close-button:before {
+  content: ">";
+  font-size: 1.1em;
+}
+
+.workspace .mod-root .workspace-tab-header {
+  box-shadow: none;
+  padding-left: 15px;
+  border-radius: 0;
+}
+.workspace .mod-root .workspace-tab-header:not(:first-child) {
+  border-left: 1px solid var(--the-color);
+}
+
 /* STATUS BAR */
 .status-bar {
   --status-bar-position: relative;
@@ -290,6 +348,7 @@ input[type='number'] {
   justify-content: flex-start;
   gap: 0px;
   padding: 0;
+  border-left: none;
 }
 .status-bar > div.status-bar-item {
   border-radius: 0;
@@ -327,10 +386,23 @@ body {
   flex-basis: 0px;
   border-width: 0px;
 }
+.workspace-ribbon.mod-left:before {
+  display: none;
+}
 .workspace-split.mod-right-split,
 .workspace-split.mod-left-split {
   margin-right:0;
 }
+
+.mod-macos {
+  --frame-left-space: calc(100px - var(--ribbon-width));
+  --frame-right-space: 0px;
+}
+
+.sidebar-toggle-button {
+  display: none;
+}
+
 /* Frameless */
 .titlebar-button-container {
   display:none;
@@ -866,7 +938,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 /* Collapse Icons */
-.collapse-icon svg {
+.collapse-icon svg.svg-icon {
   width: 0;
 }
 .is-collapsed .collapse-icon:before,
