@@ -489,9 +489,8 @@ body {
 }
 
 /* Cursor */
-.CodeMirror-cursor,
-.cm-s-obsidian .cm-cursor {
-  border-left: 0.7em solid var(--the-color);
+.cm-focused .cm-vimCursorLayer .cm-fat-cursor.cm-fat-cursor.cm-fat-cursor {
+	background-color: var(--the-color);
 }
 
 /* Headers */
