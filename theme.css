@@ -1165,13 +1165,14 @@ span.internal-embed.file-embed.mod-empty.is-loaded {
   padding: calc(var(--editor-line-height) * var(--the-font-size)) calc(2 * var(--char-width));
 }
 
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {
-    left: unset;
-}
+/*.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before {*/
+    /*left: unset;*/
+/*}*/
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before {
-    content: "|";
-    color: var(--the-color);
-    border: none;
+    /*content: "|";*/
+    /*color: var(--the-color);*/
+    /*border: none;*/
+    border-color: var(--the-color);
 }
 
 /* Code block */
