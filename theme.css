@@ -239,6 +239,7 @@ body {
   --text-muted-rgb: var(--the-color-rgb);
   --text-faint: var(--the-color);
   --text-on-accent: var(--the-color);
+  --text-on-accent-inverted: var(--the-color);
   --interactive-normal: var(--the-background-color);
   --interactive-hover: var(--the-background-color);
   --interactive-accent: var(--the-background-color);
